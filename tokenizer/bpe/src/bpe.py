@@ -92,13 +92,27 @@ class BPETokenizer:
         return vocab
 
 
-    def encode():
-        pass
+    def encode(self, decoded):
+        encoded = {}
+        for k, v in decoded.items():
+            k1, k2 = k
+            encoded_k1 = self.vocab.get(k1)
+            encoded_k2 = self.vocab.ke
+            encoded_chunk = self.vocab.get(v)
+            encoded[(encoded_k1, encoded_k2)] = encoded_chunk
+        return encoded
 
 
-    def decode():
-        pass
-
+    def decode(self):
+        decoded = {}
+        for k, v in self.merges.items():
+            # get the first and second keys from the pair tuple
+            k1, k2 = k
+            decoded_k1 = self.vocab[k1]
+            decoded_k2 = self.vocab[k2]
+            decoded_chunk = self.vocab[v]
+            decoded[(decoded_k1, decoded_k2)] = decoded_chunk
+        return decoded
 
     @staticmethod
     def update_freqs(text, freqs):
