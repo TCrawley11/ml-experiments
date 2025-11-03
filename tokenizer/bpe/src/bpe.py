@@ -4,6 +4,7 @@
 
 from functools import lru_cache
 import regex as re
+from tqdm import tqdm
 
 # the main GPT text split patterns, see
 # https://github.com/openai/tiktoken/blob/main/tiktoken_ext/openai_public.py
@@ -47,19 +48,22 @@ class BPETokenizer:
         text_chunks = re.findall(self.compiled_pattern, text)
 
         # token initialization 
-        ids = [list(ch.encode("utf-8") for ch in text_chunks)]
+        ids = [list(chunk.encode("utf-8")) for chunk in text_chunks]
 
         # count the pairs and add them to vocab
         merges = {} # {int, int} -> int
         vocab = {idx: bytes([idx]) for idx in range(256)}
 
-        for i in range(num_merges):
+        for i in tqdm(range(num_merges)):
             # count consecutive pairs
             freqs = {}
-            for chunk_id in ids:
-                self.update_freqs(chunk_id, freqs)
+            for chunk_id in ids:                
+                BPETokenizer.update_freqs(chunk_id, freqs) # freqs is updated in-place
 
             # get the most frequent pair
+            if not freqs:
+                print("No more pairs to merge. Stopping training.")
+                break
             pair = max(freqs, key=freqs.get)
             idx = 256 + i
 
@@ -88,13 +92,20 @@ class BPETokenizer:
         return vocab
 
 
-    def update_freqs(self, text, freqs):
+    def encode():
+        pass
+
+
+    def decode():
+        pass
+
+
+    @staticmethod
+    def update_freqs(text, freqs):
         """
             Function to count frequencies of input text, update freqs in-place
         """
-        freqs = {} if freqs is None else freqs
-        for pair in zip(text[:-1], text[1:]):
+        for pair in zip(text, text[1:]):
             freqs[pair] = freqs.get(pair, 0) + 1
         return freqs
-
     
