@@ -1,5 +1,5 @@
 """
-    Simple bpe tokenizer implementation. Default vocab size of 5,000
+    Simple bpe tokenizer implementation. Handles regex text splitting.
 """
 
 from functools import lru_cache
@@ -92,18 +92,26 @@ class BPETokenizer:
         return vocab
 
 
-    def encode(self, decoded):
-        encoded = {}
-        for k, v in decoded.items():
-            k1, k2 = k
-            encoded_k1 = self.vocab.get(k1)
-            encoded_k2 = self.vocab.ke
-            encoded_chunk = self.vocab.get(v)
-            encoded[(encoded_k1, encoded_k2)] = encoded_chunk
-        return encoded
+    def encode(self, text):
+        # strings -> integers
+        # meant to be used for inference, given text, find the token ids
+        text_bytes = text.encode("utf-8")
+        ids = list(text_bytes)
+        while len(ids) >= 2:
+            freqs = update_freqs(text, freqs={})
+            pair = min(freqs, key=lambda x: self.merges.get(x, float('inf')))
+            
+            if pair not in self.merges:
+                # already have the number of pairs required, no more merging required
+                break
 
+            idx = self.merges[pair]
+            ids = merge(ids, pair, idx)
+        return ids
+            
 
     def decode(self):
+        # integers -> strings
         decoded = {}
         for k, v in self.merges.items():
             # get the first and second keys from the pair tuple
@@ -113,6 +121,13 @@ class BPETokenizer:
             decoded_chunk = self.vocab[v]
             decoded[(decoded_k1, decoded_k2)] = decoded_chunk
         return decoded
+
+    def decode_inference(self, ids):
+        # integers -> strings
+        # meant to be used at inference time, doesn't process values, just the token id keys
+        text_bytes = b"".join(self.vocab[idx] for idx in ids)
+        text = text_bytes.decode(encoding='utf-8', errors='replace')
+        return text
 
     @staticmethod
     def update_freqs(text, freqs):
