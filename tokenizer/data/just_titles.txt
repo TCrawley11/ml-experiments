@@ -941,7 +941,7 @@ inFAMOUS 2
 Gran Turismo Concept 2001 Tokyo
 Demon's Souls
 NCAA Football 06
-"Hey You, Pikachu!"
+Hey You, Pikachu!
 2 Games in 1: Sonic Advance & ChuChu Rocket!
 World of Warcraft: Mists of Pandaria
 Jet Moto
@@ -1089,7 +1089,7 @@ Knack
 Star Wars: Battlefront II
 Disney's DuckTales
 Tony Hawk's Pro Skater 3
-"Monsters, Inc."
+Monsters, Inc.
 StarCraft II: Heart of the Swarm
 PGR: Project Gotham Racing 2
 Spy Hunter
@@ -1624,7 +1624,7 @@ Vigilante 8
 Castlevania
 Donkey Kong Country 2
 Bayonetta
-"WarioWare, Inc.: Mega MicroGame$"
+WarioWare, Inc.: Mega MicroGame$
 Star Wars: Battlefront II
 Madden NFL 17
 Boom Blox
@@ -1831,7 +1831,7 @@ Worldwide Soccer Manager 2008
 Spider-Man 2
 Counter-Strike
 Mad Max (2015)
-"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)"
+Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)
 GRID
 Guitar Hero Encore: Rocks The 80s
 Sunset Overdrive
@@ -2886,7 +2886,7 @@ WWF Attitude
 Blast Corps
 LEGO Harry Potter: Years 1-4
 Tactics Ogre: Let Us Cling Together
-"WarioWare, Inc.: Mega Party Game$"
+WarioWare, Inc.: Mega Party Game$
 Football Manager 2014
 Battle Arena Toshinden 2
 WWE SmackDown vs. Raw 2011
@@ -2916,7 +2916,7 @@ F-14 Tomcat
 SplashDown
 NCAA Football 98
 Jade Empire
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 The Sims 3
 Skylanders: Trap Team
 Prince of Persia: The Forgotten Sands
@@ -3047,7 +3047,7 @@ Phoenix Wright: Ace Attorney - Trials and Tribulations
 NHL 13
 Borderlands: The Pre-Sequel
 The Sims 3: High-End Loft Stuff
-"The Chronicles of Narnia: The Lion, The Witch and The Wardrobe"
+The Chronicles of Narnia: The Lion, The Witch and The Wardrobe
 Zaidan Houjin Nippon Kanji Nouryoku Kentei Kyoukai Koushiki Soft: 200 Mannin no KanKen: Tokoton Kanji Nou
 Pro Pinball: Big Race USA
 NFL Street
@@ -3087,7 +3087,7 @@ Disney's Kim Possible 2: Drakken's Demise
 Um Jammer Lammy
 Brothers In Arms: Road to Hill 30
 Madden NFL 10
-"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)"
+Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)
 Taiko no Tatsujin DS: Touch de Dokodon!
 F1 2015
 Scene It? Box Office Smash
@@ -3214,7 +3214,7 @@ God of War III
 Ape Escape 2
 Metroid Prime: Trilogy
 X-Man
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 Advance Wars: Days of Ruin
 The Sims 3: Generations
 The Crew
@@ -3325,7 +3325,7 @@ Guitar Hero: Smash Hits
 Disney TH!NK Fast: The Ultimate Trivia Showdown
 Spider-Man: Mysterio's Menace
 Madden NFL 2000
-"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)"
+Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)
 Game & Watch Gallery 4
 Littlest Pet Shop: Jungle
 Naruto: Ultimate Ninja
@@ -3409,7 +3409,7 @@ Crash Bandicoot: The Wrath of Cortex
 Smurf: Rescue In Gargamel's Castle
 Spelling Challenges and more!
 Go Diego Go! Great Dinosaur Rescue
-"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)"
+Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)
 Extreme-G
 Ready 2 Rumble Boxing
 Payday 2
@@ -3461,7 +3461,7 @@ Tom Clancy's HAWX
 Sammy Sosa High Heat Baseball 2001
 Frozen: Olaf's Quest
 Terminator 3: Rise of the Machines
-"Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)"
+Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)
 Harvest Moon: The Tale of Two Towns
 FIFA: Road to  World Cup 98
 World Cup 98
@@ -3521,7 +3521,7 @@ SpongeBob SquarePants featuring Nicktoons: Globs of Doom
 Beyond The Beyond
 Ben 10: Alien Force
 Tomb Raider: Anniversary
-"Warhammer 40,000: Space Marine"
+Warhammer 40,000: Space Marine
 Madden NFL 06
 No More Heroes
 Assassin's Creed II
@@ -3569,7 +3569,7 @@ NHL Hitz 20-02
 Classic NES Series: Dr. Mario
 The Sims: Bustin' Out
 NCAA March Madness 07
-"Monsters, Inc. Scream Team"
+Monsters, Inc. Scream Team
 Harry Potter Collection
 Tony Hawk's Project 8
 Yu-Gi-Oh! World Championship Tournament 2004
@@ -3754,7 +3754,7 @@ Tales of Symphonia: Dawn of the New World
 NBA Street Vol. 2
 The Incredible Hulk: Ultimate Destruction
 Star Wars Battlefront (2015)
-"Sakura Taisen 2 - Kimi, Shinitamou Koto Nakare"
+Sakura Taisen 2 - Kimi, Shinitamou Koto Nakare
 Jewel Master Egypt
 Time Crisis II
 Clock Tower
@@ -3902,14 +3902,14 @@ NBA Live 07
 Sega Bass Fishing
 Fire Emblem: Radiant Dawn
 Dynasty Warriors
-"SpongeBob SquarePants: Lights, Camera, Pants!"
+SpongeBob SquarePants: Lights, Camera, Pants!
 Dragon Ball: Raging Blast
 Rugrats: Scavenger Hunt
 Wrecking Crew
 International Superstar Soccer 2000 (All region sales)
 Major League Baseball 2K10
 Monsters vs. Aliens
-"Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)"
+Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)
 SpongeBob SquarePants: Creature from the Krusty Krab
 Lost: Via Domus
 NBA Live 2004
@@ -4041,7 +4041,7 @@ FIFA Soccer 09
 Mobile Suit Gundam Seed Destiny: Rengou vs. Z.A.F.T. II Plus
 Mario & Wario
 Scarface: The World is Yours
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 Pokemon Art Academy
 FIFA Soccer 64
 Dragon Ball Z: Burst Limit
@@ -4058,7 +4058,7 @@ LEGO Marvel Super Heroes
 Taiko no Tatsujin: Appare Sandaime
 Alone in the Dark
 One Piece: Grand Battle!
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 Football Manager Handheld 2009
 Sniper: Art of Victory
 Crazy Taxi
@@ -4178,7 +4178,7 @@ Hot Wheels Velocity X
 Shadowrun
 FIFA Soccer 13
 Virtua Tennis 4: World Tour
-"Warhammer 40,000: Dawn of War II"
+Warhammer 40,000: Dawn of War II
 Crazy Taxi: Fare Wars
 Clash of Elementalists
 Spider-Man 3
@@ -4243,7 +4243,7 @@ Kessen II
 Crayon Shin-Chan: Arashi o Yobu Enji
 Stuart Little 2
 Wolfenstein: The New Order
-"Warhammer 40,000: Space Marine"
+Warhammer 40,000: Space Marine
 Tak 2: The Staff of Dreams
 Art Academy: Lessons for Everyone
 Sid Meier's Civilization Revolution
@@ -4276,7 +4276,7 @@ Bleach: The Blade of Fate
 Madden NFL 12
 LEGO Rock Band
 Mad Max (2015)
-"Barbie: Jet, Set & Style!"
+Barbie: Jet, Set & Style!
 Jak and Daxter: The Lost Frontier
 Momotarou Dentetsu 11
 Command & Conquer: Red Alert 3
@@ -4414,7 +4414,7 @@ Jampack Volume 13 (RP-M)
 World Soccer Winning Eleven 9
 NBA Live 2000
 Teenage Mutant Ninja Turtles 2: Battle Nexus
-"SpongeBob SquarePants: Lights, Camera, Pants!"
+SpongeBob SquarePants: Lights, Camera, Pants!
 Disney Infinity 3.0
 TouchMaster 3
 The Thing
@@ -4454,7 +4454,7 @@ Duke Nukem 64
 Sin and Punishment: Star Successor
 Jump Start Pet Rescue
 Naughty Bear
-"SpongeBob SquarePants: Lights, Camera, Pants!"
+SpongeBob SquarePants: Lights, Camera, Pants!
 Super Robot Taisen OG: Original Generations
 Army Men World War: Final Front
 Petz: Horsez 2
@@ -4502,7 +4502,7 @@ Spec Ops: Covert Assault
 SSX Tricky
 Flight Control Rocket
 FIFA 14
-"The Chronicles of Narnia: The Lion, The Witch and The Wardrobe"
+The Chronicles of Narnia: The Lion, The Witch and The Wardrobe
 Trials Fusion
 Wheel of Fortune
 NiGHTS into dreams...
@@ -4539,7 +4539,7 @@ EyeToy: AntiGrav
 FIFA 14
 EverQuest Online Adventures
 Cool Boarders
-"999: Nine Hours, Nine Persons, Nine Doors"
+999: Nine Hours, Nine Persons, Nine Doors
 Mobile Suit Gundam: Zeonic Front
 Zone of the Enders HD Collection
 Def Jam Icon
@@ -4699,7 +4699,7 @@ World Soccer Jikkyou Winning Eleven 2000: U-23 Medal heno Chousen
 Destiny: The Taken King
 Mobile Suit Gundam
 Mass Effect Trilogy
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 Wolfenstein: The New Order
 James Patterson Women's Murder Club: Games of Passion
 Farming Simulator 2015
@@ -4764,7 +4764,7 @@ Duke Nukem Forever
 Hatsune Miku: Project Diva 2nd
 Marvel: Ultimate Alliance 2
 Mario no Super Picross
-"Ed, Edd n Eddy: The Mis-Edventures"
+Ed, Edd n Eddy: The Mis-Edventures
 Jikkyou Powerful Pro Yakuu '94
 Disney's Tarzan Untamed
 Borderlands: The Handsome Collection
@@ -4787,7 +4787,7 @@ Super Monkey Ball: Step & Roll
 Hatsune Miku: Project Diva F 2nd
 Overlord
 Tak and the Power of Juju
-"Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)"
+Transformers: The Game (XBox 360, PS2, PS3, Wii & PC Versions)
 Sega Superstars Tennis
 LEGO Harry Potter: Years 5-7
 Dragon Quest X
@@ -5106,7 +5106,7 @@ Tom Clancy's The Division
 Phantasy Star Portable 2: Infinity
 Hell's Kitchen: The Game
 LEGO Dimensions
-"Monsters, Inc. Scream Arena"
+Monsters, Inc. Scream Arena
 Reel Fishing III
 Cabela's Deer Hunt 2005 Season
 Prince of Persia: The Forgotten Sands
@@ -5520,7 +5520,7 @@ Goosebumps HorrorLand
 Phineas and Ferb: Across the 2nd Dimension
 Call Of Duty 2: Big Red One
 Elebits
-"Warhammer 40,000: Squad Command"
+Warhammer 40,000: Squad Command
 F1 2013
 Disgaea: Hour of Darkness
 NeoGeo Battle Coliseum
@@ -5545,7 +5545,7 @@ Golden Axe: Beast Rider
 MySims SkyHeroes
 MVP Baseball 2005
 Zaidan Houjin Nippon Kanji Nouryoku Kentei Kyoukai Kounin: KanKen DS 2 + Jouyou Kanji Jiten
-"Carnival Games: Monkey See, Monkey Do!"
+Carnival Games: Monkey See, Monkey Do!
 Eternal Sonata
 DX Game of Life 2
 EA Playground
@@ -5618,7 +5618,7 @@ Sniper Elite 3
 Naruto: Ultimate Ninja (JP sales)
 Final Fantasy XI
 The Settlers 7: Paths to a Kingdom
-"Go, Diego, Go!: Great Dinosaur Rescue"
+Go, Diego, Go!: Great Dinosaur Rescue
 TrackMania Turbo
 The Biggest Loser
 Minute to Win It
@@ -5654,7 +5654,7 @@ Harry Potter and the Half-Blood Prince
 Disney's Extreme Skate Adventure
 Rock Band Country Track Pack
 7 Wonders II
-"Ed, Edd n Eddy: Jawbreakers!"
+Ed, Edd n Eddy: Jawbreakers!
 Dragster
 Frankenstein's Monster
 Riven: The Sequel to Myst
@@ -5685,7 +5685,7 @@ Romance of the Three Kingdoms VII
 Shrek the Third
 Catherine
 BlazBlue: Continuum Shift
-"Monsters, Inc."
+Monsters, Inc.
 DJ Hero
 WipEout Pulse
 Quiz Magic Academy DS
@@ -5832,7 +5832,7 @@ Ehrgeiz
 Touhoku Daigaku Mirai Kagaku Gijutsu Kyoudou Kenkyuu Center Kawashima Ryuuta Kyouju Kanshu: Nou Ryoku Trainer Portable
 Karaoke Revolution Glee: Volume 3
 Spyro: Attack of the Rhynocs
-"Army Men World War: Land, Sea, Air"
+Army Men World War: Land, Sea, Air
 Dai-2-Ji Super Robot Taisen OG
 Stranglehold
 Trauma Center: New Blood
@@ -6056,8 +6056,8 @@ GRID 2
 WWII Aces
 Puzzle Quest: Challenge of the Warlords
 Shrek Super Party
-"Sakura Wars 4: Koi Seyo,Otome"
-"Sakura Wars: So Long, My Love"
+Sakura Wars 4: Koi Seyo,Otome
+Sakura Wars: So Long, My Love
 Dynasty Tactics
 The Urbz: Sims In the City (US weekly sales)
 Lightning Returns: Final Fantasy XIII
@@ -6193,7 +6193,7 @@ NFL Blitz 20-02
 Mega Man 7
 NCAA March Madness 2005
 Shadows of the Damned
-"The Chronicles of Narnia: The Lion, The Witch and The Wardrobe"
+The Chronicles of Narnia: The Lion, The Witch and The Wardrobe
 NBA In The Zone
 Corvette
 F1 ROC: Race of Champions
@@ -6444,7 +6444,7 @@ Reload: Target Down
 All-Pro Football 2K8
 Dungeons & Dragons: Eye of the Beholder
 The Crew
-"Barbie: Jet, Set & Style!"
+Barbie: Jet, Set & Style!
 Battlestations: Midway
 Rayman DS
 Gundam Breaker
@@ -6572,7 +6572,7 @@ Star Trek: The Game
 Drakan: The Ancients' Gates
 Dead or Alive Xtreme 2
 Petz: Crazy Monkeyz
-"SpongeBob SquarePants: Lights, Camera, Pants!"
+SpongeBob SquarePants: Lights, Camera, Pants!
 Choro Q3
 Tokyo Jungle
 Hunted: The Demon's Forge
@@ -6737,7 +6737,7 @@ Dood's Big Adventure
 Pirates of the Caribbean: The Legend of Jack Sparrow
 We Love Golf!
 WRC: World Rally Championship
-"Ed, Edd n Eddy: The Mis-Edventures"
+Ed, Edd n Eddy: The Mis-Edventures
 Cars: Mater-National Championship
 Dreamworks Madagascar Kartz
 Harry Potter and the Order of the Phoenix
@@ -6826,7 +6826,7 @@ Midway Arcade Treasures: Extended Play
 F1 2015
 Skylanders SWAP Force
 Bass Pro Shops: The Hunt
-"What Did I Do to Deserve This, My Lord!? 2"
+What Did I Do to Deserve This, My Lord!? 2
 Boogie SuperStar
 Burnout 2: Point of Impact
 Rock Band Track Pack Volume 1
@@ -7530,7 +7530,7 @@ Dark Messiah of Might and Magic Elements
 Just Dance 2: Extra Songs
 Midnight Club 3: DUB Edition Remix
 International Superstar Soccer 2000
-"Warhammer 40,000: Space Marine"
+Warhammer 40,000: Space Marine
 CandyLand / Chutes & Ladders / Memory
 The Bible Game
 Drift King Shutokou Battle '94
@@ -7590,7 +7590,7 @@ Super Dodge Ball Advance
 Ogre Battle Saga Episode Five: The March of the Black Queen
 Ridge Racer 6
 Angry Birds Star Wars
-"Ni Hao, Kai-lan: New Year's Celebration"
+Ni Hao, Kai-lan: New Year's Celebration
 Press Your Luck 2010 Edition
 Treasure World
 Front Mission Evolved
@@ -7611,7 +7611,7 @@ MVP Baseball 2003
 CSI: Unsolved!
 Star Wars: Battlefront
 NCAA Final Four 2004
-"The Chronicles of Narnia: The Lion, The Witch and The Wardrobe"
+The Chronicles of Narnia: The Lion, The Witch and The Wardrobe
 Tigger's Honey Hunt
 Famista 64
 Roadsters 99
@@ -7751,7 +7751,7 @@ Saw II: Flesh & Blood
 Ice Age: Dawn of the Dinosaurs
 Sniper Elite
 Arc Rise Fantasia
-"Ni Hao, Kai-lan: Super Game Day"
+Ni Hao, Kai-lan: Super Game Day
 Kouchuu Ouja Mushi King: Greatest Champion e no Michi DS
 Dynasty Warriors: Gundam 2
 Petz Pony: Beauty Pageant
@@ -7855,7 +7855,7 @@ Frogger's Adventures 2: The Lost Wand
 Sudeki
 Rango: The Video Game
 The Amazing Spider-Man (Console Version)
-"Boku no Natsuyasumi 4: Seitouchi Shounen Tanteidan, Boku to Himitsu no Chizu"
+Boku no Natsuyasumi 4: Seitouchi Shounen Tanteidan, Boku to Himitsu no Chizu
 Hyperdevotion Noire: Goddess Black Heart
 Hexen
 Mace: The Dark Age
@@ -8020,7 +8020,7 @@ Ty the Tasmanian Tiger
 Dead or Alive
 Driving Emotion Type-S
 Siren
-"The Chronicles of Narnia: The Lion, The Witch and The Wardrobe"
+The Chronicles of Narnia: The Lion, The Witch and The Wardrobe
 NARC
 Naruto Shippuden: Dragon Blade Chronicles
 Dynasty Warriors 8: Empires
@@ -8421,7 +8421,7 @@ Matchbox Cross Town Heroes
 Wolfenstein 3D
 Nobunaga no Yabou: Tenshoki
 Learning to Spell
-"Go, Diego, Go! Safari Rescue"
+Go, Diego, Go! Safari Rescue
 Super Power League
 Easy Piano
 Street Fighter Alpha 2
@@ -8657,7 +8657,7 @@ Power Rangers Double Pack
 Mugen Souls
 Yakuza Kiwami
 Pachi-Slot Kanzen Kouryaku 3: Universal Koushiki Gaido Volume 3
-"BCFX: The Black College Football Xperience, The Doug Williams Edition"
+BCFX: The Black College Football Xperience, The Doug Williams Edition
 FIFA Soccer 97
 Saw II: Flesh & Blood
 Psychic Force
@@ -8725,7 +8725,7 @@ FIFA 06: Road to FIFA World Cup
 Driven
 F.E.A.R. 3
 de Blob 2
-"Warhammer 40,000: Fire Warrior"
+Warhammer 40,000: Fire Warrior
 Hot Wheels: Battle Force 5
 James Noir's Hollywood Crimes
 Deadly Premonition
@@ -8962,7 +8962,7 @@ Alien: Isolation
 High Velocity Bowling
 Tamagotchi Collection
 Pac-Man Party 3D
-"NewU Fitness First Mind Body, Yoga & Pilates Workout"
+NewU Fitness First Mind Body, Yoga & Pilates Workout
 Backyard Sports: Sandlot Sluggers
 Turbo Prop Racing
 Barbie Superpack: Secret Agent / Groovy Games
@@ -9002,7 +9002,7 @@ QuickSpot
 Deception IV: Blood Ties
 Tennis no Oji-Sama: Aim at The Victory!
 L.A. Rush
-"Lunar 2: Eternal Blue(sales, but wrong system)"
+Lunar 2: Eternal Blue(sales, but wrong system)
 Where the Wild Things Are
 Pipe Dreams 3D
 Derby Stallion Gold
@@ -9148,7 +9148,7 @@ NBA ShootOut 2002
 SingStar Vol. 3
 The Granstream Saga
 Scene It? Bright Lights! Big Screen!
-"Holy Invasion of Privacy, Badman! What Did I Do to Deserve This?"
+Holy Invasion of Privacy, Badman! What Did I Do to Deserve This?
 WCW Backstage Assault
 Micro Machines 64 Turbo
 Bassmasters 2000
@@ -9505,7 +9505,7 @@ Nicktoons: MLB
 Digimon Racing
 Ape Escape 3
 Green Lantern: Rise of the Manhunters
-"Crouching Tiger, Hidden Dragon"
+Crouching Tiger, Hidden Dragon
 Last Bronx
 Iridion II
 Momotaro Douchuuki
@@ -9684,7 +9684,7 @@ Clock Tower: The First Fear
 Kidou Senshi Gundam Seed Battle Destiny
 Godzilla Unleashed: Double Smash
 Star Trek: Conquest
-"Kilari: Na-san, Mon Meilleur Ami"
+Kilari: Na-san, Mon Meilleur Ami
 Strikers 1945
 Ochaken no Heya DS
 Obscure: The Aftermath
@@ -9699,7 +9699,7 @@ Solitaire & Mahjong
 Zen-Nippon Pro Wrestling: Ouja no Kon
 NASCAR 2005: Chase for the Cup
 Homefront: The Revolution
-"Hisshou Pachinko*Pachi-Slot Kouryaku Series Vol. 12: CR Shinseiki Evangelion - Shito, Futatabi"
+Hisshou Pachinko*Pachi-Slot Kouryaku Series Vol. 12: CR Shinseiki Evangelion - Shito, Futatabi
 Guilty Gear X
 Deadliest Catch: Sea of Chaos
 One Piece: Pirate Warriors 2
@@ -9870,7 +9870,7 @@ Major League Baseball 2K6
 Vacation Isle: Beach Party
 Fit in Six
 Mahou Shoujo Lyrical Nanoha A's Portable: The Battle of Aces
-"Ed, Edd n Eddy: The Mis-Edventures"
+Ed, Edd n Eddy: The Mis-Edventures
 Onimusha: Blade Warriors
 Tecmo Bowl: Kickoff
 Disney's Extreme Skate Adventure
@@ -10057,7 +10057,7 @@ Mega Man Battle Chip Challenge
 Desktop Tower Defense
 Puyo Puyo Tetris
 Pro Evolution Soccer 2014
-"Sakura Wars: So Long, My Love"
+Sakura Wars: So Long, My Love
 The Settlers
 Grease
 My SAT Coach with The Princeton Review
@@ -10200,7 +10200,7 @@ FlatOut: Ultimate Carnage
 Mobile Light Force 2
 Naval Ops: Warship Gunner
 Soma Bringer
-"Sesame Street: Ready, Set, Grover!"
+Sesame Street: Ready, Set, Grover!
 Shin Sangoku Musou 6 Special
 The Penguins of Madagascar: Dr. Blowhole Returns - Again!
 Go! Sudoku (JP sales)
@@ -10377,7 +10377,7 @@ Final Fantasy XII International Zodiac Job System
 Barbie in The 12 Dancing Princesses
 Fight Club
 Carnage Heart
-"Grand Theft Auto: Mission Pack #1, London 1969"
+Grand Theft Auto: Mission Pack #1, London 1969
 Kamen Rider: Climax Heroes
 Robotics;Notes
 Disney Channel Collection Vol. 1
@@ -10676,7 +10676,7 @@ Pro Evolution Soccer 2013
 Micro Machines V3
 Alvin and the Chipmunks: Chipwrecked
 College Hoops 2K6
-"Sakura Wars 2: Kimi, Shinitamou koto Nakare"
+Sakura Wars 2: Kimi, Shinitamou koto Nakare
 NatGeo Challenge! Wild Life
 Idol Janshi Suchie-Pai Remix
 Kung Fu Panda 2
@@ -10690,7 +10690,7 @@ Petz Hamsterz Superstarz
 NeverDead
 Happy Feet Two
 Age of Empires II: The Age of Kings
-"Warhammer 40,000: Dawn of War II - Chaos Rising"
+Warhammer 40,000: Dawn of War II - Chaos Rising
 Predator: Concrete Jungle
 CSI: Hard Evidence
 F1 2014
@@ -10749,7 +10749,7 @@ Famicom Mini: Mappy
 Reign of Fire
 Descent Maximum
 Disney Sing It! High School Musical 3: Senior Year
-"Blast Works: Build, Trade, Destroy"
+Blast Works: Build, Trade, Destroy
 Resident Evil: Revelations 2
 Major League Baseball 2K11
 Shining Force EXA
@@ -10900,7 +10900,7 @@ Digimon Rumble Arena 2
 Scooby-Doo! Unmasked
 Dora the Explorer: Dora Saves the Crystal Kingdom
 Etrian Odyssey 2 Untold: Knight of Fafnir
-"Prinny 2: Dawn of Operation Panties, Dood!"
+Prinny 2: Dawn of Operation Panties, Dood!
 Alien Monster Bowling League
 Devil May Cry 4
 Shockwave Assault
@@ -11067,7 +11067,7 @@ Super Robot Wars OG: The Moon Dwellers
 Uta no Prince-Sama: Music 2
 Jambo! Safari Animal Rescue
 Supreme Commander
-"Saiyuuki: Kinkaku, Ginkaku no Inbou"
+Saiyuuki: Kinkaku, Ginkaku no Inbou
 Bleach: Heat the Soul 6
 Roary the Racing Car
 Ski and Shoot
@@ -11276,7 +11276,7 @@ Animal Planet: Emergency Vets
 Martian Panic
 America's Army: True Soldiers
 Pachitte Chonmage Tatsujin 13: Pachinko Hissatsu Shigotojin III
-"Sesame Street: Ready, Set, Grover!"
+Sesame Street: Ready, Set, Grover!
 Marvel Nemesis: Rise of the Imperfects
 Wreckin Crew
 Theme Park
@@ -11411,7 +11411,7 @@ Zero: Tsukihami no Kamen
 Ice Age 2: The Meltdown
 Seven Samurai 20XX
 10 Minute Solution
-"Hisshou Pachinko*Pachi-Slot Kouryaku Series DS Vol. 2: Shinseiki Evangelion - Shito, Futatabi"
+Hisshou Pachinko*Pachi-Slot Kouryaku Series DS Vol. 2: Shinseiki Evangelion - Shito, Futatabi
 Jikkyou Powerful Pro Yakyuu 15
 Cloudy With a Chance of Meatballs
 Tom Clancy's Splinter Cell: Pandora Tomorrow
@@ -11431,7 +11431,7 @@ FIFA Soccer 2003
 Adventure Time: The Secret of the Nameless Kingdom
 Little League World Series Baseball: Double Play
 DanceDanceRevolution
-"3 in 1: Solitaire, Mahjong & Tangram"
+3 in 1: Solitaire, Mahjong & Tangram
 Pop'n Music
 Outlaw Golf
 Worms: A Space Oddity
@@ -11483,7 +11483,7 @@ Iggy's Reckin' Balls
 The Witch and the Hundred Knight
 Tomb Raider: Underworld
 Samurai Western
-"Warhammer 40,000: Dawn of War II - Retribution"
+Warhammer 40,000: Dawn of War II - Retribution
 Line Rider 2: Unbound
 Earth Defense Force 2017
 Persona 4: Arena Ultimax
@@ -11657,7 +11657,7 @@ Frogger Beyond
 Man vs. Wild
 Katekyoo Hitman Reborn! DS: Flame Rumble Kaien Ring Soudatsuen!
 Stuart Little 3: Big Photo Adventure
-"Ni Hao, Kai-lan: Super Game Day"
+Ni Hao, Kai-lan: Super Game Day
 Katekyoo Hitman Reborn! DS: Flame Rumble Hyper - Moeyo Mirai
 Pro Yakyuu Famista DS 2010
 Captain Tsubasa
@@ -11906,7 +11906,7 @@ All-Star Baseball 2004
 Pac-Man and the Ghostly Adventures 2
 Tom Clancy's Splinter Cell: Chaos Theory
 Cho~ricchi! Tamagotchi no Puchi Puchi Omisecchi
-"Flower, Sun, and Rain"
+Flower, Sun, and Rain
 James Cameron's Dark Angel
 The Legend of Heroes: Trails in the Sky Third Chapter
 Moxie Girlz
@@ -11928,7 +11928,7 @@ Famicom Mini: Nazo no Murasame-Jou
 Galerians: Ash
 Mahjong Fight Club DS: Wi-Fi Taiou
 Haunting Ground
-"Horrid Henry: The Good, The Bad and The Bugly"
+Horrid Henry: The Good, The Bad and The Bugly
 Kane & Lynch 2: Dog Days
 Vampire Knight DS
 Disney Sports Skateboarding
@@ -11938,7 +11938,7 @@ Magi: The Labyrinth of Beginning
 The Wolf Among Us
 Tornado
 Fantasy Aquarium by DS
-"Hi! Hamtaro - Little Hamsters,big Adventures: Ham-Ham Challenge"
+Hi! Hamtaro - Little Hamsters,big Adventures: Ham-Ham Challenge
 Damnation
 I Don't Have Many Friends Portable
 Rock Band Country Track Pack 2
@@ -12234,7 +12234,7 @@ Chocolatier
 Cosmos Chaos!
 Lego Star Wars: The Force Awakens
 12-Sai. Honto no Kimochi
-"Warhammer 40,000: Squad Command"
+Warhammer 40,000: Squad Command
 Hasbro Family Game Night Fun Pack
 Port Royale 3
 Pro Yaky? Spirits 4
@@ -12743,7 +12743,7 @@ Pump It Up: Exceed
 Hakuouki: Yuugi Roku Ni - Matsuri Hayashi to Taishitachi
 Wreckless: ThE YaKuza MisSiOns
 Doki-Doki Universe
-"Hisshou Pachinko*Pachi-Slot Kouryaku Series Vol. 11: Shinseiki Evangelion - Magokoro o, Kimi ni"
+Hisshou Pachinko*Pachi-Slot Kouryaku Series Vol. 11: Shinseiki Evangelion - Magokoro o, Kimi ni
 TOCA Race Driver 2: Ultimate Racing Simulator
 Girls RPG: Cinderellife
 Dr. Muto
@@ -12773,7 +12773,7 @@ A-Train 6
 Meitantei Conan: Tantei Ryoku Trainer
 MotoGP
 ESPN International Winter Sports 2002
-"Tennis no Oji-Sama: Doubles no Oji-Sama - Girls, Be Gracious!"
+Tennis no Oji-Sama: Doubles no Oji-Sama - Girls, Be Gracious!
 KimiKiss (ebKore+)
 Gold and Glory: The Road to El Dorado
 NBA Live 07
@@ -12858,7 +12858,7 @@ NFL Quarterback Club 2002
 Saki: Zenkoku-hen
 Mister Slime
 Shiren the Wanderer 5 Plus: Fortune Tower and the Dice of Fate
-"Murder, She Wrote"
+Murder, She Wrote
 Virtual Villagers: A New Home
 Wing Commander: Prophecy
 Marc Ecko's Getting Up: Contents Under Pressure
@@ -13137,7 +13137,7 @@ Odoru Daisousasen The Game: Sensuikan ni Sennyuu Seyo!
 George of the Jungle and the Search for the Secret
 Turbo Turtle Adventure
 Sengoku Basara 4: Sumeragi
-"Warhammer 40,000: Dawn of War"
+Warhammer 40,000: Dawn of War
 Shinseiki Evangelion 2: Tsukurareshi Sekai - Another Cases
 Hisshou 777 Fighter: Pachi Slot Eiyu Densetsu
 Corpse Party: Blood Covered - Repeated Fear
@@ -13180,7 +13180,7 @@ Hummer Badlands
 Freelancer
 Woody Woodpecker: Escape from Buzz Buzzard Park
 Operation Flashpoint: Dragon Rising
-"Lupin III: Lupin ni wa Shi o, Zenigata ni wa Koi o"
+Lupin III: Lupin ni wa Shi o, Zenigata ni wa Koi o
 Furu Furu Park
 Monster Band
 Alter Echo
@@ -13486,7 +13486,7 @@ Exist Archive: The Other Side of the Sky
 Honda ATV Fever
 Operation Flashpoint: Elite
 Nobunaga's Ambition: Sphere of Influence - Sengoku Risshiden
-"Roswell Conspiracies: Aliens, Myths & Legends"
+Roswell Conspiracies: Aliens, Myths & Legends
 Front Mission
 Dead Island Definitive Collection
 Sekai no Gohan Shaberu! DS Oryouri Navi
@@ -13595,7 +13595,7 @@ Zombi Daisuki
 Igor: The Game
 LEGO Indiana Jones: The Original Adventures
 Card Fight!! Vanguard G: Stride to Victory!!
-"Negima!? Chou Mahora Taisen Kattoiin, Keiyaku Shikkou Dechai masuu"
+Negima!? Chou Mahora Taisen Kattoiin, Keiyaku Shikkou Dechai masuu
 Doraemon: Shin Nobita no Daimakyou Peko to 5-nin no Tankenta
 Challenge Me: Maths Workout
 The Invincible Iron Man
@@ -13997,7 +13997,7 @@ Music Maker: Rockstar
 Fading Shadows
 Formula 1 06
 Without Warning
-"Minna de Jibun no Setsumeisho: B-Kata, A-Kata, AB-Kata, O-Kata"
+Minna de Jibun no Setsumeisho: B-Kata, A-Kata, AB-Kata, O-Kata
 Smashing Drive
 Age of Mythology: The Titans
 Fighting Vipers 2
@@ -14068,7 +14068,7 @@ The Ant Bully
 Sega Arcade Gallery
 Crazy Machines
 Astrology DS
-"My World, My Way (US sales)"
+My World, My Way (US sales)
 Planescape: Torment
 Tao Adventure: Curse Demon
 Aegis of Earth: Protonovus Assault
@@ -14153,7 +14153,7 @@ Kekkaishi: Kokubourou no Kage
 Trap Gunner: Countdown to Oblivion
 Suzumiya Haruhi no Tsuisou
 Mame Goma: Shiro to Kuro no Meikyuu
-"Crouching Tiger, Hidden Dragon"
+Crouching Tiger, Hidden Dragon
 Clash of Elementalists
 Simple DS Series Vol. 8: The Kanshikikan - Kinkyuu Shutsudou!! Jiken Genba wo Touch Seyo
 Harukanaru Toki no Naka de Yumenoukihashi Special
@@ -14530,7 +14530,7 @@ R-Type III: The Third Lightning
 Star Wars: The Force Unleashed II
 Need for Speed (2015)
 Hakuouki
-"Princess Natasha: Student, Secret Agent, Princess"
+Princess Natasha: Student, Secret Agent, Princess
 Atomic Betty
 Monster Hunter Frontier Online: Season 10
 Robin Hood: Defender of the Crown
@@ -14725,7 +14725,7 @@ Dakar 2: The World's Ultimate Rally
 NBA 2K7
 Auto Modellista
 Jewel Match 2
-"Hanayaka Kana, Ware ga Ichizoku Twin Pack"
+Hanayaka Kana, Ware ga Ichizoku Twin Pack
 MySims
 Guild Wars: Nightfall
 Greg Hastings' Tournament Paintball Max'd
@@ -14973,7 +14973,7 @@ Omega Quintet
 TV Anime Idolm@ster: Cinderella Girls G4U! Pack Vol.1
 Demigod
 The Voice
-"Ed, Edd n Eddy: The Mis-Edventures"
+Ed, Edd n Eddy: The Mis-Edventures
 Bunmei Haruka: Aoiza Ibunroku
 TV Anime Idolm@ster: Cinderella Girls G4U! Pack Vol.6
 Blade Arcus from Shining EX
@@ -14982,7 +14982,7 @@ Lilpri DS: Hime-Chen! Apple Pink
 Star Trek Online
 Rapala for Kinect
 Rugby Challenge 3
-"Hisshou Pachinko*Pachi-Slot Kouryaku Series DS Vol. 1: Shinseiki Evangelion - Magokoro o, Kimi ni"
+Hisshou Pachinko*Pachi-Slot Kouryaku Series DS Vol. 1: Shinseiki Evangelion - Magokoro o, Kimi ni
 Diabolik Lovers: Vandead Carnival
 O.M.G. 26 - Our Mini Games
 Ty the Tasmanian Tiger 3: Night of the Quinkan
@@ -15178,7 +15178,7 @@ Eureka Seven Vol. 2: The New Vision
 Love Once: Mermaid's Tears
 Puzzle Challenge: Crosswords and More!
 Mata Hari: Betrayal is only a Kiss Away
-"Simple 2500 Series Portable!! Vol. 12: The Hohei 2: Senyuu yo, Sakini Ike"
+Simple 2500 Series Portable!! Vol. 12: The Hohei 2: Senyuu yo, Sakini Ike
 Muppets Party Cruise
 Quake 4
 Maximum Capacity: Hotel Giant
@@ -15275,7 +15275,7 @@ Thomas & Friends: Hero of the Rails
 Taito Legends 2
 World Championship Poker featuring Howard Lederer: All In
 Kill.Switch
-"Renai Banchou: Inochi Meishi, Koiseyo Otome! Love is Power!!!"
+Renai Banchou: Inochi Meishi, Koiseyo Otome! Love is Power!!!
 Jinsei Game Wii
 Heavy Fire: The Chosen Few 3D
 Motto Hayaku! Seikaku Ni! Suu Sense Keisan Ryuoku Up Training - SuuTore
@@ -15478,12 +15478,12 @@ Yu-Gi-Oh! 5D's Wheelie Breakers (JP sales)
 Heroes VS
 Kazoku Keikaku
 Sotsugyou II: Neo Generation Special
-"Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)"
+Transformers: Revenge of the Fallen (XBox 360, PS3, & PC Versions)
 Agatha Christie's The ABC Murders
 Tom Clancy's Splinter Cell Classic Trilogy HD
 Aoishiro
 Rainbow Islands Revolution
-"Warhammer 40,000: Dawn of War: Soulstorm"
+Warhammer 40,000: Dawn of War: Soulstorm
 Virtual Kasparov
 Codename: Kids Next Door: Operation V.I.D.E.O.G.A.M.E.
 Dynasty Warriors 8: Empires
@@ -15617,7 +15617,7 @@ PachiPara 3D: Ooumi Monogatari 2 - Pachi Pro Fuuunroku Hana
 Nodame Cantabile: Tanoshii Ongaku no Jikan Desu
 Iridium Runners
 Ben 10 Omniverse 2
-"Shounen Onmyouji: Tsubasa Yoima, Ten e Kaere"
+Shounen Onmyouji: Tsubasa Yoima, Ten e Kaere
 Bakumatsu Renka: Karyuu Kenshi-den
 Dancing on Ice
 Tiny Toon Adventures: Wacky Stackers
@@ -15719,7 +15719,7 @@ Without Warning
 Marvel Superheroes 3D: Grandmaster's Challenge
 Suzunone Seven: Rebirth Knot
 Arslan: The Warriors of Legend
-"Hanayaka Kana, Ware ga Ichizoku: Tasogare Polarstar"
+Hanayaka Kana, Ware ga Ichizoku: Tasogare Polarstar
 Zoids Dash
 Digimon Rumble Arena
 Vitamin X Evolution Plus
@@ -15786,7 +15786,7 @@ Gummy Bears Magical Medallion
 Colin McRae Rally 2005
 Mana Khemia 2: Ochita Gakuen to Renkinjutsushi Tachi Portable+
 LEGO Star Wars: The Video Game
-"Moshi, Kono Sekai ni Kami-sama ga Iru to suru Naraba."
+Moshi, Kono Sekai ni Kami-sama ga Iru to suru Naraba.
 Dark Void
 Chou!! Super Nep League DS
 Irritating Stick
@@ -15896,7 +15896,7 @@ Antz Extreme Racing
 Enemy Territory: Quake Wars
 Truck Racer
 The Sims 4: Luxury Party Stuff
-"Nogizaka Haruka no Himitsu Cosplay, Hajime Mashita"
+Nogizaka Haruka no Himitsu Cosplay, Hajime Mashita
 Triggerheart Exelica
 Jet Impulse
 Games Explosion!
@@ -15953,7 +15953,7 @@ Choro Q
 Narcissus: Moshimo Ashita ga Runara
 Girl Friend Beta: Kimi to Sugosu Natsuyasumi
 IHRA Drag Racing: Sportsman Edition
-"Sharin no Kuni, Himawari no Shoujo"
+Sharin no Kuni, Himawari no Shoujo
 Guild Wars: Factions
 Simple DS Series Vol. 42: The Haioku Byoutou
 Drone Tactics
@@ -16058,7 +16058,7 @@ Sangoku Koi Senki: Otome no Heihou!
 PDC World Championship Darts 2008
 WRC: FIA World Rally Championship
 Alfa Romeo Racing Italiano
-"Pachi-Slot Teiou: Golgo 13 Las Vegas (JP sales, but wrong system)"
+Pachi-Slot Teiou: Golgo 13 Las Vegas (JP sales, but wrong system)
 Digger Simulator
 Turbo: Super Stunt Squad
 Super Robot Taisen XO
@@ -16084,7 +16084,7 @@ Sakura Sakura: Haru Urara
 Uta no * Prince-Sama: Sweet Serenade
 The Legend of Heroes: Trails in the Sky Third Chapter
 Road Trip: Shifting Gears
-"Iza, Shutsujin! Koisen"
+Iza, Shutsujin! Koisen
 Major Dream: Major Wii Nagero! Gyroball!!
 Hiiro no Kakera: Shin Tamayori Hime Denshou
 Datenshi no Amai Yuuwaku x Kaikan Phrase
@@ -16260,7 +16260,7 @@ Championship Manager 2010
 Simple DS Series Vol. 41: The Bakudan Shori-Han
 Paragon
 Naxat Soft Reachmania Vol. 1: CR Galaxy Angel
-"Hanayaka Kana, Ware ga Ichizoku"
+Hanayaka Kana, Ware ga Ichizoku
 Mamoru-kun wa Norowarete Shimatta!
 Sengoku Hime 2 Arashi: Hyakubana Senran Tatsukaze no Gotoku
 Myself; Yourself
@@ -16370,7 +16370,7 @@ Wand of Fortune
 Arabians Lost: The Engagement on Desert
 Gobliiins 4
 S.Y.K: Shinsetsu Saiyuuki Portable
-"Crouching Tiger, Hidden Dragon"
+Crouching Tiger, Hidden Dragon
 Meru Purana
 Cross Edge Dash
 Colin McRae Rally 04
@@ -16407,8 +16407,8 @@ The Wild West
 The Amazing Spider-Man 2 (2014)
 Saint Seiya Omega: Ultimate Cosmo
 Sega Rally Revo
-"Element Girl: Love, Fashion and Friends"
-"Sakigake!! Otokojuku - Nihon yo, Kore ga Otoko Dearu!"
+Element Girl: Love, Fashion and Friends
+Sakigake!! Otokojuku - Nihon yo, Kore ga Otoko Dearu!
 Teenage Mutant Ninja Turtles (3DS)
 Time Leap
 The Godfather (JP sales)
@@ -16416,7 +16416,7 @@ thinkSMART: Chess for Kids
 World Heroes Anthology
 Chaos;Child
 th!nk Logic Trainer
-"Tennis no Oji-Sama: Doubles no Oji-Sama - Boys, Be Glorious!"
+Tennis no Oji-Sama: Doubles no Oji-Sama - Boys, Be Glorious!
 Routes PE
 Winning Eleven: Pro Evolution Soccer 2007
 Uchida Yasuou Mystery: Meitantei Senken Mitsuhiko Series: Fukutoshin Renzoku Satsujin Jiken
@@ -16458,7 +16458,7 @@ Art Academy: Home Studio
 Juggler DS
 Katekyoo Hitman Reborn! Kindan no Yami no Delta
 Rugby World Cup 2015
-"Horse Life 4: My Horse, My Friend, My Champion"
+Horse Life 4: My Horse, My Friend, My Champion
 Razor Freestyle Scooter
 Outdoors Unleashed: Alaska 3D
 Vitamin Y
@@ -16475,7 +16475,7 @@ Captain Rainbow
 Total War Attila: Tyrants & Kings
 Space Raiders
 DoDonPachi Daifukkatsu: Black Label
-"Shinobi, Koi Utsutsu: Setsugetsuka Koi Emaki"
+Shinobi, Koi Utsutsu: Setsugetsuka Koi Emaki
 Ishin no Arashi: Shippuu Ryuumeden
 Agatha Christie: Peril at End House
 Muv-Luv Alternative
@@ -16499,7 +16499,7 @@ Snood 2: On Vacation
 The Land Before Time: Into the Mysterious Beyond
 Irotoridori no Sekai: World's End Re-Birth
 Satomi Hakkenden: Hachi Tamanoki
-"Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)"
+Transformers: War for Cybertron (XBox 360, PS3, & PC Versions)
 Naraku no Shiro
 Shinigami to Shoujo
 Mystereet

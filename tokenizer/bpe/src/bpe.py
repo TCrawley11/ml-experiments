@@ -12,24 +12,6 @@ from tqdm import tqdm
 GPT2_SPLIT_PATTERN = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 GPT4_SPLIT_PATTERN = r"""'(?i:[sdmt]|ll|ve|re)|[^\r\n\p{L}\p{N}]?+\p{L}+|\p{N}{1,3}| ?[^\s\p{L}\p{N}]++[\r\n]*|\s*[\r\n]|\s+(?!\S)|\s+"""
 
-
-def merge(chunk_ids, pair, idx):
-    """
-        Helper function to replace consecutive occurences of pair with new token idx
-    """
-    new_ids = []
-    i = 0
-
-    while i < len(chunk_ids):
-        if chunk_ids[i] == pair[0] and i < len(chunk_ids) - 1 and chunk_ids[i+1] == pair[1]:
-            new_ids.append(idx)
-            i += 2
-        else: 
-            new_ids.append(chunk_ids[i])
-            i += 1
-    
-    return new_ids
-
 class BPETokenizer:
     def __init__(self, pattern):
         # combined bpe pair dicitonary, e.g: (<token_id 69>,<token_id 690>): <merged_token_id 700>)
@@ -46,7 +28,6 @@ class BPETokenizer:
         
         # break text into text chunks using regex pattern (pre-process)
         text_chunks = re.findall(self.compiled_pattern, text)
-
         # token initialization 
         ids = [list(chunk.encode("utf-8")) for chunk in text_chunks]
 
@@ -67,7 +48,7 @@ class BPETokenizer:
             pair = max(freqs, key=freqs.get)
             idx = 256 + i
 
-            ids = [merge(chunk_ids, pair, idx) for chunk_ids in ids]
+            ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
 
             merges[pair] = idx
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
@@ -110,17 +91,18 @@ class BPETokenizer:
         return ids
             
 
-    def decode(self):
-        # integers -> strings
-        decoded = {}
-        for k, v in self.merges.items():
-            # get the first and second keys from the pair tuple
-            k1, k2 = k
-            decoded_k1 = self.vocab[k1]
-            decoded_k2 = self.vocab[k2]
-            decoded_chunk = self.vocab[v]
-            decoded[(decoded_k1, decoded_k2)] = decoded_chunk
-        return decoded
+    def decode(self, ids):
+        decoded = []
+        for idx in ids:
+            if idx in self.vocab:
+                decoded.append(self.vocab[idx])
+            # add special token handling here
+            else:
+                raise ValueError(f"invalid token id: {idx}")
+        text_bytes = b"".join(decoded)
+        text = text_bytes.decode("utf-8", errors="replace")
+        return text
+
 
     def decode_inference(self, ids):
         # integers -> strings
@@ -137,4 +119,22 @@ class BPETokenizer:
         for pair in zip(text, text[1:]):
             freqs[pair] = freqs.get(pair, 0) + 1
         return freqs
-    
+
+
+    @staticmethod
+    def merge(chunk_ids, pair, idx):
+        """
+            Helper function to replace consecutive occurences of pair with new token idx
+        """
+        new_ids = []
+        i = 0
+
+        while i < len(chunk_ids):
+            if chunk_ids[i] == pair[0] and i < len(chunk_ids) - 1 and chunk_ids[i+1] == pair[1]:
+                new_ids.append(idx)
+                i += 2
+            else: 
+                new_ids.append(chunk_ids[i])
+                i += 1
+
+        return new_ids
