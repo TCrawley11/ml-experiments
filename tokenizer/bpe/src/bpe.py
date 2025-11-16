@@ -49,6 +49,7 @@ class BPETokenizer:
             idx = 256 + i
 
             ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
+            ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
 
             merges[pair] = idx
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
@@ -110,6 +111,29 @@ class BPETokenizer:
         text_bytes = b"".join(self.vocab[idx] for idx in ids)
         text = text_bytes.decode(encoding='utf-8', errors='replace')
         return text
+    def encode(self, decoded):
+        encoded = {}
+        for k, v in decoded.items():
+            k1, k2 = k
+            encoded_k1 = self.vocab.get(k1)
+            encoded_k2 = self.vocab.get(k2)
+            encoded_chunk = self.vocab.get(v)
+            encoded[(encoded_k1, encoded_k2)] = encoded_chunk
+        return encoded
+
+
+    def decode(self, ids):
+        decoded = []
+        for idx in ids:
+            if idx in self.vocab:
+                decoded.append(self.vocab[idx])
+            # add special token handling here
+            else:
+                raise ValueError(f"invalid token id: {idx}")
+        text_bytes = b"".join(decoded)
+        text = text_bytes.decode("utf-8", errors="replace")
+        return text
+
 
     @staticmethod
     def update_freqs(text, freqs):
@@ -119,6 +143,25 @@ class BPETokenizer:
         for pair in zip(text, text[1:]):
             freqs[pair] = freqs.get(pair, 0) + 1
         return freqs
+
+
+    @staticmethod
+    def merge(chunk_ids, pair, idx):
+        """
+            Helper function to replace consecutive occurences of pair with new token idx
+        """
+        new_ids = []
+        i = 0
+
+        while i < len(chunk_ids):
+            if chunk_ids[i] == pair[0] and i < len(chunk_ids) - 1 and chunk_ids[i+1] == pair[1]:
+                new_ids.append(idx)
+                i += 2
+            else: 
+                new_ids.append(chunk_ids[i])
+                i += 1
+
+        return new_ids
 
 
     @staticmethod
