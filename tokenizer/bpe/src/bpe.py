@@ -80,7 +80,7 @@ class BPETokenizer:
         text_bytes = text.encode("utf-8")
         ids = list(text_bytes)
         while len(ids) >= 2:
-            freqs = update_freqs(text, freqs={})
+            freqs = self.update_freqs(text, freqs={})
             pair = min(freqs, key=lambda x: self.merges.get(x, float('inf')))
             
             if pair not in self.merges:
@@ -111,28 +111,16 @@ class BPETokenizer:
         text_bytes = b"".join(self.vocab[idx] for idx in ids)
         text = text_bytes.decode(encoding='utf-8', errors='replace')
         return text
-    def encode(self, decoded):
-        encoded = {}
-        for k, v in decoded.items():
-            k1, k2 = k
-            encoded_k1 = self.vocab.get(k1)
-            encoded_k2 = self.vocab.get(k2)
-            encoded_chunk = self.vocab.get(v)
-            encoded[(encoded_k1, encoded_k2)] = encoded_chunk
-        return encoded
 
-
-    def decode(self, ids):
-        decoded = []
-        for idx in ids:
-            if idx in self.vocab:
-                decoded.append(self.vocab[idx])
-            # add special token handling here
-            else:
-                raise ValueError(f"invalid token id: {idx}")
-        text_bytes = b"".join(decoded)
-        text = text_bytes.decode("utf-8", errors="replace")
-        return text
+    #def encode(self, decoded):
+    #    encoded = {}
+    #    for k, v in decoded.items():
+    #        k1, k2 = k
+    #        encoded_k1 = self.vocab.get(k1)
+    #        encoded_k2 = self.vocab.get(k2)
+    #        encoded_chunk = self.vocab.get(v)
+    #        encoded[(encoded_k1, encoded_k2)] = encoded_chunk
+    #    return encoded
 
 
     @staticmethod
@@ -143,25 +131,6 @@ class BPETokenizer:
         for pair in zip(text, text[1:]):
             freqs[pair] = freqs.get(pair, 0) + 1
         return freqs
-
-
-    @staticmethod
-    def merge(chunk_ids, pair, idx):
-        """
-            Helper function to replace consecutive occurences of pair with new token idx
-        """
-        new_ids = []
-        i = 0
-
-        while i < len(chunk_ids):
-            if chunk_ids[i] == pair[0] and i < len(chunk_ids) - 1 and chunk_ids[i+1] == pair[1]:
-                new_ids.append(idx)
-                i += 2
-            else: 
-                new_ids.append(chunk_ids[i])
-                i += 1
-
-        return new_ids
 
 
     @staticmethod
