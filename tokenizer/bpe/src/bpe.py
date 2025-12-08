@@ -29,25 +29,24 @@ class BPETokenizer:
         # break text into text chunks using regex pattern (pre-process)
         text_chunks = re.findall(self.compiled_pattern, text)
         # token initialization 
-        ids = [list(chunk.encode("utf-8")) for chunk in text_chunks]
+        ids = [id for chunk in text_chunks for id in chunk.encode("utf-8")]
 
         merges = {} # {int, int} -> int
         vocab = {idx: bytes([idx]) for idx in range(256)}
 
         for i in tqdm(range(num_merges)):
             # count consecutive pairs
-            freqs = {}
-            for chunk_id in ids:                
-                BPETokenizer.update_freqs(chunk_id, freqs) # freqs is updated in-place
+            freqs = BPETokenizer.update_freqs(ids, {})
 
             # get the most frequent pair
             if not freqs:
+                # this can happen if the text is too small or no pairs can be merged
                 print("No more pairs to merge. Stopping training.")
                 break
             pair = max(freqs, key=freqs.get)
             idx = 256 + i
 
-            ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
+            ids = self.merge(ids, pair, idx)
 
             merges[pair] = idx
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
@@ -76,25 +75,30 @@ class BPETokenizer:
     def encode(self, text):
         # strings -> integers
         # meant to be used for inference, given text, find the token ids
-        #text_bytes = text.encode("utf-8")
-        ids = list(text)
-        while len(ids) >= 2:
-            freqs = self.update_freqs(text, freqs={})
-            pair = min(freqs, key=lambda x: self.merges.get(x, float('inf')))
-            
-            if pair not in self.merges:
-                # already have the number of pairs required, no more merging required
-                break
+        text_chunks = re.findall(self.compiled_pattern, text)
+        all_ids = []
+        for chunk in text_chunks:
+            chunk_ids = list(chunk.encode("utf-8"))
+            while len(chunk_ids) >= 2:
+                # find the next best pair to merge
+                stats = BPETokenizer.update_freqs(chunk_ids, {})
+                pair = min(stats, key=lambda p: self.merges.get(p, float("inf")))
+                if pair not in self.merges:
+                    break # nothing else can be merged
+                idx = self.merges[pair]
+                chunk_ids = self.merge(chunk_ids, pair, idx)
+            all_ids.extend(chunk_ids)
+        return all_ids
 
-            idx = self.merges[pair]
-            ids = self.merge(ids, pair, idx)
-        return ids
 
     def encode_single(self, text):
         """
         Take in a single token and return the token id
+        Used in inference
         """
         reverse_vocab = {value: key for key, value in self.vocab.items()}
+        if isinstance(text, bytes) != True:
+            text = text.encode('utf-8')
         return reverse_vocab.get(text)
  
 
@@ -112,28 +116,31 @@ class BPETokenizer:
         return text
 
     def decode_single(self, id):
-        decoded = []
-        decoded.append(self.vocab[id])
+        """
+        Take in a single token id and return the token
+        Used in inference
+        """
+        if id is None or id not in self.vocab:
+            raise ValueError(f"invalid token id: {id}")
+        decoded = self.vocab[id]
+        return decoded
         text_bytes = b"".join(decoded)
-        text = text_bytes.decode("utf-8", errors="replace")
-        return text
+        if isinstance(text_bytes, bytes):
+            return text_bytes.decode("utf-8", errors="replace")
+        return text_bytes
 
-    def decode_inference(self, ids):
-        # integers -> strings
-        # meant to be used at inference time, doesn't process values, just the token id keys
-        text_bytes = b"".join(self.vocab[idx] for idx in ids)
-        text = text_bytes.decode(encoding='utf-8', errors='replace')
-        return text
+    def generate_io_pairs(self, ids, context_size=4):
+        # If ids is a list of lists, flatten it.
+        if ids and isinstance(ids[0], list):
+            ids = [item for sublist in ids for item in sublist]
 
-    #def encode(self, decoded):
-    #    encoded = {}
-    #    for k, v in decoded.items():
-    #        k1, k2 = k
-    #        encoded_k1 = self.vocab.get(k1)
-    #        encoded_k2 = self.vocab.get(k2)
-    #        encoded_chunk = self.vocab.get(v)
-    #        encoded[(encoded_k1, encoded_k2)] = encoded_chunk
-    #    return encoded
+        # Generate non-overlapping input/output pairs
+        # The step size is context_size + 1 to move to the next chunk
+        step = context_size + 1
+        for i in range(0, len(ids) - step + 1, step):
+            ctx = ids[i:i+context_size]
+            target = [ids[i+context_size]] # Target is a list with a single token ID
+            yield ctx, target
 
 
     @staticmethod
