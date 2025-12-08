@@ -31,7 +31,6 @@ class BPETokenizer:
         # token initialization 
         ids = [list(chunk.encode("utf-8")) for chunk in text_chunks]
 
-        # count the pairs and add them to vocab
         merges = {} # {int, int} -> int
         vocab = {idx: bytes([idx]) for idx in range(256)}
 
@@ -49,13 +48,12 @@ class BPETokenizer:
             idx = 256 + i
 
             ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
-            ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
 
             merges[pair] = idx
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
 
             if verbose:
-                print(f"{idx}/{num_merges} pairs merged. {pair} -> idx. {vocab[idx]} occured {freqs.get(pair)} times.")
+                print(f"{idx}/{num_merges} pairs merged. {pair} -> {vocab[idx]} occured {freqs.get(pair)} times.")
 
         self.merges = merges
         self.vocab = vocab
@@ -74,11 +72,12 @@ class BPETokenizer:
         return vocab
 
 
+    # not really working, I think this was meant for training?
     def encode(self, text):
         # strings -> integers
         # meant to be used for inference, given text, find the token ids
-        text_bytes = text.encode("utf-8")
-        ids = list(text_bytes)
+        #text_bytes = text.encode("utf-8")
+        ids = list(text)
         while len(ids) >= 2:
             freqs = self.update_freqs(text, freqs={})
             pair = min(freqs, key=lambda x: self.merges.get(x, float('inf')))
@@ -88,10 +87,18 @@ class BPETokenizer:
                 break
 
             idx = self.merges[pair]
-            ids = merge(ids, pair, idx)
+            ids = self.merge(ids, pair, idx)
         return ids
-            
 
+    def encode_single(self, text):
+        """
+        Take in a single token and return the token id
+        """
+        reverse_vocab = {value: key for key, value in self.vocab.items()}
+        return reverse_vocab.get(text)
+ 
+
+    # not really working, same as the encode method
     def decode(self, ids):
         decoded = []
         for idx in ids:
@@ -104,6 +111,12 @@ class BPETokenizer:
         text = text_bytes.decode("utf-8", errors="replace")
         return text
 
+    def decode_single(self, id):
+        decoded = []
+        decoded.append(self.vocab[id])
+        text_bytes = b"".join(decoded)
+        text = text_bytes.decode("utf-8", errors="replace")
+        return text
 
     def decode_inference(self, ids):
         # integers -> strings
