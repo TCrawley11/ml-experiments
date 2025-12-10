@@ -30,5 +30,5 @@ class Tiktokenizer:
         step = context_size + 1
         for i in range(0, len(tokens)-step, step-1):
             input = tokens[i:context_size+i]
-            output = tokens[context_size+i]
-            yield input, output
+            target = tokens[context_size+i]
+            yield input, target

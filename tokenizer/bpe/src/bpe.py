@@ -1,5 +1,6 @@
 """
-    Simple bpe tokenizer implementation. Handles regex text splitting.
+    Custom BPE tokenizer implementation made from scratch. Modeled after the GPT-4 tokenizer.
+    Handles regex text splitting.
 """
 
 from functools import lru_cache
