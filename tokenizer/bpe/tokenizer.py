@@ -16,8 +16,8 @@ class Tiktokenizer:
         return self.tokenizer.decode(tokens, errors)
     
 
-    def decode_single_token_bytes(self, tokens, errors="replace"):
-        return self.tokenizer.decode_single_token_bytes(tokens, errors)
+    def decode_single_token_bytes(self, token):
+        return self.tokenizer.decode_single_token_bytes(token)
 
 
     def pretty_print_token_to_string(self, tokens):
@@ -25,3 +25,10 @@ class Tiktokenizer:
         for token in tokens:
             print(f'token id: {token} -----> {self.tokenizer.decode_single_token_bytes(token)}')
         print('=' * 30, "token ids to string conversion complete", '=' * 20)
+
+    def input_output_pairs(self, tokens, context_size: int = 4):
+        step = context_size + 1
+        for i in range(0, len(tokens)-step, step-1):
+            input = tokens[i:context_size+i]
+            output = tokens[context_size+i]
+            yield input, output
