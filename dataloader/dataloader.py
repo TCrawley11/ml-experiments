@@ -30,6 +30,13 @@ class Train_dataset(Dataset):
         return self.input_ids[id], self.target_ids[id]
 
     
-class Train_dataloader(Dataloader):
-    def __init__():
-        pass
+    def create_dataloader(
+            self,
+            batch_size,
+            max_length,
+            stride,
+            shuffle,
+            drop_last,
+            num_workers,
+            tokenizer
+    ):
