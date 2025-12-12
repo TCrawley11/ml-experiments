@@ -7,11 +7,11 @@ from torch.utils.data import Dataset, DataLoader
 """
 
 class Train_dataset(Dataset):
-    def __init__(self, text, tokenizer, max_length, stride):
+    def __init__(self, text, tokenizer, max_length, stride, allowed_special = {"<|bof>|", "<|endoftext|>"}):
         self.input_ids = []
         self.target_ids = []
 
-        token_ids = tokenizer.encode(text)
+        token_ids = tokenizer.encode(text, allowed_special)
 
         for i in range(0, len(token_ids) - max_length, stride):
             input = token_ids[i:max_length + i]
@@ -53,3 +53,15 @@ class Train_dataloader():
 
     def get_dataloader(self):
         return self.dataloader
+
+class Embeddings():
+    def __init__(self, context_length, output_dim: int = 256, vocab_size: int = 100256):
+        # create the token, position
+        self.token_embeddings_layer = torch.nn.Embedding(vocab_size, output_dim)
+        self.pos_embeddings_layer = torch.nn.Embedding(context_length, output_dim)
+        
+    def embedding_layer(self, input, context_length):
+        token_embeddings = self.token_embeddings_layer(input)
+        pos_embeddings = self.pos_embeddings_layer(torch.arange(context_length))
+
+        return token_embeddings + pos_embeddings
