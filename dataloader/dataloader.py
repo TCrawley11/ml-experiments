@@ -55,7 +55,7 @@ class Train_dataloader():
         return self.dataloader
 
 class Embeddings():
-    def __init__(self, context_length, output_dim: int = 256, vocab_size: int = 100256):
+    def __init__(self, context_length, output_dim: int = 256, vocab_size: int = 100261):
         # create the token, position
         self.token_embeddings_layer = torch.nn.Embedding(vocab_size, output_dim)
         self.pos_embeddings_layer = torch.nn.Embedding(context_length, output_dim)
