@@ -35,3 +35,17 @@ class Causal_attention(torch.nn.Module):
         context_vec = attn_weights @ values
 
         return context_vec
+
+class MultiHeadAttentionWrapper(torch.nn.Module):
+    def __init__(self, d_in, d_out, context_length, dropout, num_heads, qkv_bias=False):
+        super().__init__()
+        self.heads = torch.nn.ModuleList(
+            [Causal_attention(
+                d_in, d_out, context_length, dropout, qkv_bias
+            )
+            for _ in range(num_heads)]
+        )
+
+    
+    def forward(self, input):
+        return torch.cat([head(input) for head in self.heads], dim=-1)
