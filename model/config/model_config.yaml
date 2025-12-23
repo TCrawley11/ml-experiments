@@ -1,5 +1,5 @@
 model:
-  vocab_size: 50257
+  vocab_size: 100257
   context_length: 1024
   emb_dim: 768
   n_heads: 12

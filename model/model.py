@@ -2,22 +2,28 @@ import torch
 import torch.nn as nn
 import yaml
 
-class DummyGPTModel(nn.Module):
-    def __init__(self, cfg_path, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.cfg = self.load_yaml(cfg_path)
+# utility to load configs in yaml format
+def load_yaml(path: str):
+    with open(path, 'r') as f:
+        config = yaml.safe_load(f)
+    return config
 
-        self.tok_emb  = nn.Linear(self.cfg["vocab_size"], self.cfg["emb_dim"]) 
-        self.pos_emb  = nn.Linear(self.cfg["context_length"], self.cfg["emb_dim"]) 
-        self.drop_emb = nn.Dropout(self.cfg["drop_rate"])
+
+class DummyGPTModel(nn.Module):
+    def __init__(self, cfg, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.tok_emb  = nn.Embedding(cfg["vocab_size"], cfg["emb_dim"]) 
+        self.pos_emb  = nn.Embedding(cfg["context_length"], cfg["emb_dim"]) 
+        self.drop_emb = nn.Dropout(cfg["drop_rate"])
 
         self.trf_blocks = nn.Sequential(
-            *[DummyTransformerBlock(self.cfg)
-              for _ in range(self.cfg["n_layers"])]
+            *[DummyTransformerBlock(cfg)
+              for _ in range(cfg["n_layers"])]
         )
-        self.final_norm = DummyLayerNorm(self.cfg["emb_dim"])
+        self.final_norm = DummyLayerNorm(cfg["emb_dim"])
         self.out_head = nn.Linear(
-            self.cfg["emb_dim"], self.cfg["vocab_size"], bias=False
+            cfg["emb_dim"], cfg["vocab_size"], bias=False
         )
 
     def forward(self, in_idx):
@@ -33,11 +39,6 @@ class DummyGPTModel(nn.Module):
         logits = self.out_head(x)
         return logits
 
-    @staticmethod
-    def load_yaml(path: str):
-        with open(path, 'r') as f:
-            config = yaml.safe_load(f)
-        return config
 
 
 class DummyTransformerBlock(nn.Module):
@@ -48,7 +49,7 @@ class DummyTransformerBlock(nn.Module):
         return x
 
 class DummyLayerNorm(nn.Module):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, normalized_shape, eps=1e-5, *args, **kwargs):
         super().__init__(*args, **kwargs)
     
     def forward(self, x):
