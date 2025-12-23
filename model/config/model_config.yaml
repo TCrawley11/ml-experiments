@@ -1,4 +1,5 @@
 model:
+  # prolly have to change this later to 50257 to match gpt 2 weights...
   vocab_size: 100257
   context_length: 1024
   emb_dim: 768

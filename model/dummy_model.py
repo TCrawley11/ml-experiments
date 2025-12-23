@@ -40,7 +40,6 @@ class DummyGPTModel(nn.Module):
         return logits
 
 
-
 class DummyTransformerBlock(nn.Module):
     def __init__(self, cfg, *args, **kwargs):
         super().__init__(*args, **kwargs)
