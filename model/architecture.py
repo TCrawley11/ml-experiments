@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+
 class LayerNorm(nn.Module):
     def __init__(self, emb_dim, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -15,3 +16,15 @@ class LayerNorm(nn.Module):
 
         norm_x = (x - mean) / torch.sqrt(var + self.eps)
         return self.scale * norm_x + self.shift
+
+
+class GELU(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    # GPT-2 approximation of gelu activation function found via curve fitting
+    def forward(self, x):
+        return 0.5 * x * (1 + torch.tanh(
+            torch.sqrt(torch.tensor(2.0 / torch.pi)) *
+            (x + 0.044715 * torch.pow(x, 3))
+        ))
