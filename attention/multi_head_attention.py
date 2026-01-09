@@ -13,9 +13,9 @@ class MultiHeadAttention(nn.Module):
         self.num_heads = num_heads
         self.head_dim = d_out // num_heads
 
-        self.w_query = nn.Linear(d_in, d_out, qkv_bias)
-        self.w_key = nn.Linear(d_in, d_out, qkv_bias)
-        self.w_value = nn.Linear(d_in, d_out, qkv_bias)
+        self.w_query = nn.Linear(d_in, d_out, bias=qkv_bias)
+        self.w_key = nn.Linear(d_in, d_out, bias=qkv_bias)
+        self.w_value = nn.Linear(d_in, d_out, bias=qkv_bias)
 
         self.out_proj = nn.Linear(d_out, d_out)
         self.dropout = nn.Dropout(dropout)
@@ -26,11 +26,11 @@ class MultiHeadAttention(nn.Module):
         )
 
     
-    def forward(self, input):
-        b, num_tokens, d_in = input.shape
-        queries = self.w_query(input)
-        keys    = self.w_key(input)
-        values  = self.w_value(input)
+    def forward(self, x):
+        b, num_tokens, d_in = x.shape
+        queries = self.w_query(x)
+        keys    = self.w_key(x)
+        values  = self.w_value(x)
 
         queries = queries.view(b, num_tokens, self.num_heads, self.head_dim)
         keys    = keys.view(b, num_tokens, self.num_heads, self.head_dim)
