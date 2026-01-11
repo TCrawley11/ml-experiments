@@ -53,13 +53,13 @@ class TransformerBlock(nn.Module):
             d_out = cfg["emb_dim"],
             context_length = cfg["context_length"],
             num_heads = cfg["n_heads"],
-            dropout = cfg["drop_rate"],
+            dropout = cfg["drop_rate_mha"],
             qkv_bias = cfg["qkv_bias"]
         )
         self.ff = FeedForward(cfg)
         self.norm1 = LayerNorm(cfg["emb_dim"])
         self.norm2 = LayerNorm(cfg["emb_dim"])
-        self.drop_shortcut = nn.Dropout(cfg["drop_rate"])
+        self.drop_shortcut = nn.Dropout(cfg["drop_rate_shortcut"])
 
     def forward(self, x):
         shortcut = x
@@ -115,7 +115,7 @@ class GPTModel(nn.Module):
 
         self.tok_emb = nn.Embedding(cfg["vocab_size"], cfg["emb_dim"])
         self.pos_emb = nn.Embedding(cfg["context_length"], cfg["emb_dim"])
-        self.drop_emb = nn.Dropout(cfg["drop_rate"])
+        self.drop_emb = nn.Dropout(cfg["drop_rate_emb"])
 
         self.trf_blocks = nn.Sequential(
             *[TransformerBlock(cfg) for _ in range(cfg["n_layers"])]
