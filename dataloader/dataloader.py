@@ -7,11 +7,11 @@ from torch.utils.data import Dataset, DataLoader
 """
 
 class Train_dataset(Dataset):
-    def __init__(self, text, tokenizer, max_length, stride, allowed_special = {"<|bof>|", "<|endoftext|>"}):
+    def __init__(self, text, tokenizer, max_length, stride, allowed_special = {"<|bof|>", "<|endoftext|>"}):
         self.input_ids = []
         self.target_ids = []
 
-        token_ids = tokenizer.encode(text, allowed_special)
+        token_ids = tokenizer.encode(text, allowed_special=allowed_special)
 
         for i in range(0, len(token_ids) - max_length, stride):
             input = token_ids[i:max_length + i]
@@ -29,20 +29,14 @@ class Train_dataset(Dataset):
 
     
 class Train_dataloader():
-    def __init__(
-        self,
-        text,
-        batch_size,
-        max_length,
-        stride,
-        shuffle,
-        drop_last,
-        num_workers,
-        tokenizer
-    ):
-
-        self.dataset = Train_dataset(text, tokenizer, max_length, stride)
-
+    def __init__(self, config, text, batch_size, shuffle, drop_last, num_workers, tokenizer):
+        self.dataset = Train_dataset(
+            text, 
+            tokenizer, 
+            max_length=config["context_length"], 
+            stride=config["context_length"], 
+        )
+        
         self.dataloader = DataLoader(
             self.dataset,
             batch_size=batch_size,
