@@ -11,3 +11,6 @@ wheels/
 
 # lock file
 uv.lock
+
+# gutenberg books
+training/gutenberg_preprocessed/**
