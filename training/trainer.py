@@ -82,7 +82,8 @@ class Trainer():
         with torch.no_grad():
             token_ids = generate_text(
                 model=model, idx=encoded,
-                max_new_tokens=50, context_size=context_size
+                max_new_tokens=50, context_size=context_size,
+                temperature=0.8,top_k=3
             )
         decoded_text = token_ids_to_text(token_ids, tokenizer)
         print(decoded_text.replace("\n", " "))  # Compact print format

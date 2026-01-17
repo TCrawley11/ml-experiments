@@ -219,6 +219,7 @@ def generate_text(model, idx,
             # Replace argmax with multinomial
             idx_next = torch.multinomial(probas, num_samples=1)
         else:
+            probas = torch.softmax(logits, dim=-1)
             idx_next = torch.argmax(probas, dim=-1, keepdim=True)
 
         if idx_next == eos_id:
