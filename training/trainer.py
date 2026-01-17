@@ -1,6 +1,6 @@
 import torch
 from utility import token_ids_to_text, text_to_token_ids
-from model.architecture import generate_text_simple
+from model.architecture import generate_text
 
 class Trainer():
     def __init__(self):
@@ -80,7 +80,7 @@ class Trainer():
         context_size = model.pos_emb.weight.shape[0]
         encoded = text_to_token_ids(start_context, tokenizer).to(device)
         with torch.no_grad():
-            token_ids = generate_text_simple(
+            token_ids = generate_text(
                 model=model, idx=encoded,
                 max_new_tokens=50, context_size=context_size
             )
