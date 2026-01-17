@@ -103,6 +103,8 @@ def train_model_simple(model, optimizer, device, n_epochs,
             for index, file_path in enumerate(all_files[:25], 1):
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
+
+                # TODO: pre-tokenize books 
                 print(f"Tokenizing file {index} of {total_files}: {file_path}")
 
                 # Initialize new data loaders for each book
@@ -173,7 +175,8 @@ if __name__ == "__main__":
                         help="Frequency of saving model checkpoints during training")
     parser.add_argument("--lr", type=float, default=5e-4,
                         help="Learning rate for the optimizer")
-    parser.add_argument("--batch_size", type=int, default=4,
+    # Changed batch size to 8 here, smoother gradients + faster training?
+    parser.add_argument("--batch_size", type=int, default=8,
                         help="Batch size for training")
     parser.add_argument("--debug", type=bool, default=False,
                         help="Uses a very small model for debugging purposes")
@@ -185,7 +188,6 @@ if __name__ == "__main__":
     model = GPTModelFlashAttn(config)
     model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
-    #tokenizer = tiktoken.get_encoding("gpt2")
 
     data_dir = args.data_dir
     all_files = [os.path.join(path, name) for path, subdirs, files
