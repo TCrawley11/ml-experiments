@@ -11,6 +11,7 @@ import os
 import sys
 from pathlib import Path
 import time
+import datetime
 import tiktoken
 import torch
 
@@ -151,7 +152,11 @@ def train_model_simple(model, optimizer, device, n_epochs,
 
     except KeyboardInterrupt:
         file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
-        torch.save(model.state_dict(), file_name)
+        torch.save({
+            model.state_dict(),
+            optimizer.state_dict()
+        },
+            file_name)
         print(f"Saved {file_name}")
 
     return train_losses, val_losses, track_tokens_seen
@@ -178,6 +183,8 @@ if __name__ == "__main__":
     # Changed batch size to 8 here, smoother gradients + faster training?
     parser.add_argument("--batch_size", type=int, default=8,
                         help="Batch size for training")
+    parser.add_argument("--chkpt_path", type=str, default=None,
+                        help=".pth file containing model and optimizer state dict")
     parser.add_argument("--debug", type=bool, default=False,
                         help="Uses a very small model for debugging purposes")
 
@@ -186,8 +193,14 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(123)
     model = GPTModelFlashAttn(config)
-    model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
+
+    # if checkpoint file is included, load
+    if args.chkpt_path:
+        checkpoint = torch.load(args.chkpt_path, map_location=device)
+        model.load_state_dict(checkpoint["model_state_dict"])
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+    model.to(device)
 
     data_dir = args.data_dir
     all_files = [os.path.join(path, name) for path, subdirs, files
@@ -219,5 +232,13 @@ if __name__ == "__main__":
     epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
     plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
 
+    today = datetime.today().strftime('%Y-%m-%d %H-%M-%S')
+
     torch.save(model.state_dict(), output_dir / "model_pg_final.pth")
+    torch.save({
+        "model_state_dict": model.state_dict(),
+        "optimizer_state_dict": optimizer.state_dict(),
+        },
+        f"model_and_optimizer_{today}.pth"
+    )
     print(f"Maximum GPU memory allocated: {torch.cuda.max_memory_allocated() / 1e9:.2f} GB")
