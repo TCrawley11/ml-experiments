@@ -14,3 +14,6 @@ uv.lock
 
 # gutenberg books
 training/gutenberg_preprocessed/**
+
+# checkpoints
+training/model_checkpoints/**
