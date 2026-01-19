@@ -17,3 +17,6 @@ training/gutenberg_preprocessed/**
 
 # checkpoints
 training/model_checkpoints/**
+
+# env file
+.env
