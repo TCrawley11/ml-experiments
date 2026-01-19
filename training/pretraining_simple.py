@@ -1,9 +1,6 @@
 """
 Script for pretraining a small GPT-2 flash attention 124M parameter model
 on books from Project Gutenberg.
-
-Before running this script, make sure you downloaded and
-processed the dataset as described in the README.md.
 """
 
 import argparse
@@ -14,6 +11,7 @@ import time
 import datetime
 import tiktoken
 import torch
+import wandb
 
 project_root = os.path.abspath(os.path.join(os.getcwd(), '..'))
 if project_root not in sys.path:
@@ -105,6 +103,8 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
 
+                wandb.log({"current_book": index, "book_path": file_path})
+
                 # TODO: pre-tokenize books 
                 print(f"Tokenizing file {index} of {total_files}: {file_path}")
 
@@ -118,6 +118,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     num_workers=0
                 )
                 print("Training ...")
+
                 model.train()
                 for input_batch, target_batch in train_loader:
                     optimizer.zero_grad()
@@ -127,6 +128,14 @@ def train_model_simple(model, optimizer, device, n_epochs,
                     tokens_seen += input_batch.numel()
                     global_step += 1
 
+                    # wandb progress track log
+                    wandb.log({
+                        "train/loss_step": loss.item(),
+                        "train/tokens_seen": tokens_seen,
+                        "train/global_step": global_step,
+                        "train/epoch": epoch
+                    })
+
                     # Optional evaluation step
                     if global_step % eval_freq == 0:
                         train_loss, val_loss = trainer.evaluate_model(
@@ -134,6 +143,12 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         train_losses.append(train_loss)
                         val_losses.append(val_loss)
                         track_tokens_seen.append(tokens_seen)
+
+                        # wandb loss log
+                        wandb.log({
+                            "eval/train_loss": train_loss,
+                            "eval/val_loss": val_loss
+                        })
                         print(f"Ep {epoch+1} (Step {global_step}): "
                               f"Train loss {train_loss:.3f}, Val loss {val_loss:.3f}")
 
@@ -146,7 +161,14 @@ def train_model_simple(model, optimizer, device, n_epochs,
                 if global_step % save_ckpt_freq:
                     file_name = output_dir / f"model_pg_{global_step}.pth"
                     torch.save(model.state_dict(), file_name)
+                    wandb.save(str(file_name))
                     print(f"Saved {file_name}")
+
+                book_elapsed = time.time() - book_start_time
+                wandb.log({
+                    "timing/book_processing_time": book_elapsed,
+                    "timing/books_completed": index
+                })
 
                 print_eta(start_time, book_start_time, index, total_files)
 
@@ -158,6 +180,9 @@ def train_model_simple(model, optimizer, device, n_epochs,
         },
             file_name)
         print(f"Saved {file_name}")
+    
+    finally:
+        wandb.finish()
 
     return train_losses, val_losses, track_tokens_seen
 
@@ -178,10 +203,10 @@ if __name__ == "__main__":
                         help="Frequency of evaluations during training")
     parser.add_argument("--save_ckpt_freq", type=int, default=100_000,
                         help="Frequency of saving model checkpoints during training")
-    parser.add_argument("--lr", type=float, default=5e-4,
+    parser.add_argument("--lr", type=float, default=6e-4,
                         help="Learning rate for the optimizer")
-    # Changed batch size to 8 here, smoother gradients + faster training?
-    parser.add_argument("--batch_size", type=int, default=8,
+    # Changed batch size to 16 here, smoother gradients + faster training?
+    parser.add_argument("--batch_size", type=int, default=16,
                         help="Batch size for training")
     parser.add_argument("--chkpt_path", type=str, default=None,
                         help=".pth file containing model and optimizer state dict")
@@ -194,6 +219,21 @@ if __name__ == "__main__":
     torch.manual_seed(123)
     model = GPTModelFlashAttn(config)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.1)
+    
+    # wandb project initialization
+    wandb.init(
+        project="gpt2-gutenberg-pretraining",
+        config={
+            "learning_rate": args.lr,
+            "batch_size": args.batch_size,
+            "epochs": args.n_epochs,
+            "model_params": config,
+            "train_ratio": 0.90,
+        },
+        name=f"gpt2-124M-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    )
+    wandb.watch(model, log="all", log_freq=100)
+
 
     # if checkpoint file is included, load
     if args.chkpt_path:
@@ -229,9 +269,6 @@ if __name__ == "__main__":
         tokenizer=tokenizer
     )
 
-    epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
-    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
-
     today = datetime.today().strftime('%Y-%m-%d %H-%M-%S')
 
     torch.save(model.state_dict(), output_dir / "model_pg_final.pth")
@@ -241,4 +278,11 @@ if __name__ == "__main__":
         },
         f"model_and_optimizer_{today}.pth"
     )
+    wandb.save(str(output_dir / "model_pg_final.pth"))
+
+    epochs_tensor = torch.linspace(0, args.n_epochs, len(train_losses))
+    fig = plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
+    wandb.log({"final_loss_plot": wandb.Image(fig)})
+    
+    wandb.finish()
     print(f"Maximum GPU memory allocated: {torch.cuda.max_memory_allocated() / 1e9:.2f} GB")
