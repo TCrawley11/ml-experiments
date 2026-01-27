@@ -8,7 +8,7 @@ import os
 import sys
 from pathlib import Path
 import time
-import datetime
+from datetime import datetime
 import tiktoken
 import torch
 import wandb
