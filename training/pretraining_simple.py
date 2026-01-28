@@ -98,8 +98,7 @@ def train_model_simple(model, optimizer, device, n_epochs,
         for epoch in range(n_epochs):
 
             # Iterate over the books in the training corpus
-            # NOTE* THIS IS TRAINING ON 25 BOOKS!
-            for index, file_path in enumerate(all_files[:25], 1):
+            for index, file_path in enumerate(all_files, 1):
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
 
@@ -175,10 +174,11 @@ def train_model_simple(model, optimizer, device, n_epochs,
     except KeyboardInterrupt:
         file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
         torch.save({
-            model.state_dict(),
-            optimizer.state_dict()
-        },
-            file_name)
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'global_step': global_step,
+        }, file_name)
+        wandb.save(str(file_name))
         print(f"Saved {file_name}")
     
     finally:
@@ -230,7 +230,7 @@ if __name__ == "__main__":
             "model_params": config,
             "train_ratio": 0.90,
         },
-        name=f"gpt2-124M-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}"
+        name=f"gpt2-124M-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     )
     wandb.watch(model, log="all", log_freq=100)
 

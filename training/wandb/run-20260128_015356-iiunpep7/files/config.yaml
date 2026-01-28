@@ -1,0 +1,73 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            fnd8iqht8idg7g97erqksmerofbu3vdc:
+                args:
+                    - --chkpt_path
+                    - model_checkpoints/model_pg_622460.pth
+                codePath: training/pretraining_simple.py
+                codePathLocal: pretraining_simple.py
+                cpu_count: 20
+                cpu_count_logical: 20
+                cudaVersion: "13.1"
+                disk:
+                    /:
+                        total: "2000082227200"
+                        used: "640080846848"
+                email: tcrawley@uwo.ca
+                executable: /home/tygo/code/ml-experiments/.venv/bin/python
+                git:
+                    commit: f8e85ff9e8bac7732ed9b3218790d64d6beadc75
+                    remote: https://github.com/TCrawley11/ml-experiments.git
+                gpu: NVIDIA GeForce RTX 5060 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Blackwell
+                      cudaCores: 4608
+                      memoryTotal: "17103323136"
+                      name: NVIDIA GeForce RTX 5060 Ti
+                      uuid: GPU-df1a0aef-a9da-8d41-9edc-92e026c4ddfd
+                host: cachy-ai
+                memory:
+                    total: "32983810048"
+                os: Linux-6.18.7-2-cachyos-x86_64-with-glibc2.42
+                program: /home/tygo/code/ml-experiments/training/pretraining_simple.py
+                python: CPython 3.12.12
+                root: /home/tygo/code/ml-experiments/training
+                startedAt: "2026-01-28T06:53:56.669556Z"
+                writerId: fnd8iqht8idg7g97erqksmerofbu3vdc
+        m: []
+        python_version: 3.12.12
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 1
+                - 13
+                - 16
+            "4": 3.12.12
+            "5": 0.24.0
+            "12": 0.24.0
+            "13": linux-x86_64
+batch_size:
+    value: 16
+epochs:
+    value: 1
+learning_rate:
+    value: 0.0006
+model_params:
+    value:
+        context_length: 256
+        drop_rate_emb: 0.1
+        drop_rate_mha: 0.1
+        drop_rate_shortcut: 0.1
+        emb_dim: 768
+        n_heads: 12
+        n_layers: 12
+        qkv_bias: false
+        vocab_size: 50257
+train_ratio:
+    value: 0.9
