@@ -83,6 +83,73 @@ def print_eta(start_time, book_start_time, index, total_files):
           f"\nTotal time elapsed {total_h}h {total_m}m {total_s}s"
           f"\nETA for remaining books: {eta_h}h {eta_m}m {eta_s}s")
 
+def assign(left, right):
+    if left.shape != right.shape:
+            raise ValueError(f"Shape mismatch. Left: {left.shape}, "
+                             "Right: {right.shape}"
+                             )
+    return torch.nn.Paramater(torch.tensor(right))
+
+def load_weights_into_gpt(gpt, params):
+    gpt.pos_emb.weight = assign(gpt.pos_emb.weight, params["wpe"])
+    gpt.tok_emb.weight = assign(gpt.tok_emb.weight, params["wte"])
+
+    for b in range(len(params["blocks"])):
+        q_w, k_w, v_w = np.split(
+            (params["blocks"][b]["attn"]["c_attn"])["w"], 3, axis=-1)
+        gpt.trf_blocks[b].att.W_query.weight = assign(
+            gpt.trf_blocks[b].att.W_query.weight, q_w.T)
+        gpt.trf_blocks[b].att.W_key.weight = assign(
+            gpt.trf_blocks[b].att.W_key.weight, k_w.T)
+        gpt.trf_blocks[b].att.W_value.weight = assign(
+            gpt.trf_blocks[b].att.W_value.weight, v_w.T)
+
+        q_b, k_b, v_b = np.split(
+            (params["blocks"][b]["attn"]["c_attn"])["b"], 3, axis=-1)
+        gpt.trf_blocks[b].att.W_query.bias = assign(
+            gpt.trf_blocks[b].att.W_query.bias, q_b)
+        gpt.trf_blocks[b].att.W_key.bias = assign(
+            gpt.trf_blocks[b].att.W_key.bias, k_b)
+        gpt.trf_blocks[b].att.W_value.bias = assign(
+            gpt.trf_blocks[b].att.W_value.bias, v_b)
+
+        gpt.trf_blocks[b].att.out_proj.weight = assign(
+            gpt.trf_blocks[b].att.out_proj.weight,
+            params["blocks"][b]["attn"]["c_proj"]["w"].T)
+        gpt.trf_blocks[b].att.out_proj.bias = assign(
+            gpt.trf_blocks[b].att.out_proj.bias,
+            params["blocks"][b]["attn"]["c_proj"]["b"])
+
+        gpt.trf_blocks[b].ff.layers[0].weight = assign(
+            gpt.trf_blocks[b].ff.layers[0].weight,
+            params["blocks"][b]["mlp"]["c_fc"]["w"].T)
+        gpt.trf_blocks[b].ff.layers[0].bias = assign(
+            gpt.trf_blocks[b].ff.layers[0].bias,
+            params["blocks"][b]["mlp"]["c_fc"]["b"])
+        gpt.trf_blocks[b].ff.layers[2].weight = assign(
+            gpt.trf_blocks[b].ff.layers[2].weight,
+            params["blocks"][b]["mlp"]["c_proj"]["w"].T)
+        gpt.trf_blocks[b].ff.layers[2].bias = assign(
+            gpt.trf_blocks[b].ff.layers[2].bias,
+            params["blocks"][b]["mlp"]["c_proj"]["b"])
+
+        gpt.trf_blocks[b].norm1.scale = assign(
+            gpt.trf_blocks[b].norm1.scale,
+            params["blocks"][b]["ln_1"]["g"])
+        gpt.trf_blocks[b].norm1.shift = assign(
+            gpt.trf_blocks[b].norm1.shift,
+            params["blocks"][b]["ln_1"]["b"])
+        gpt.trf_blocks[b].norm2.scale = assign(
+            gpt.trf_blocks[b].norm2.scale,
+            params["blocks"][b]["ln_2"]["g"])
+        gpt.trf_blocks[b].norm2.shift = assign(
+            gpt.trf_blocks[b].norm2.shift,
+            params["blocks"][b]["ln_2"]["b"])
+
+    gpt.final_norm.scale = assign(gpt.final_norm.scale, params["g"])
+    gpt.final_norm.shift = assign(gpt.final_norm.shift, params["b"])
+    gpt.out_head.weight = assign(gpt.out_head.weight, params["wte"])
+
 
 def train_model_simple(model, optimizer, device, n_epochs,
                        eval_freq, eval_iter, print_sample_iter, start_context,
@@ -98,7 +165,73 @@ def train_model_simple(model, optimizer, device, n_epochs,
         for epoch in range(n_epochs):
 
             # Iterate over the books in the training corpus
-            for index, file_path in enumerate(all_files, 1):
+            # RESUMING TRAINING FROM BOOK 7
+            for index, file_path in enumerate(all_files[6:], 1):
+                book_start_time = time.time()
+                text_data = read_text_file(file_path) + " <|endoftext|> "
+
+                wandb.log({"current_book": index, "book_path": file_path})
+
+                # TODO: pre-tokenize books 
+                print(f"Tokenizing file {index} of {total_files}: {file_path}")
+
+                # Initialize new data loaders for each book
+                train_loader, val_loader = create_dataloaders(
+
+        gpt.trf_blocks[b].att.out_proj.weight = assign(
+            gpt.trf_blocks[b].att.out_proj.weight,
+            params["blocks"][b]["attn"]["c_proj"]["w"].T)
+        gpt.trf_blocks[b].att.out_proj.bias = assign(
+            gpt.trf_blocks[b].att.out_proj.bias,
+            params["blocks"][b]["attn"]["c_proj"]["b"])
+
+        gpt.trf_blocks[b].ff.layers[0].weight = assign(
+            gpt.trf_blocks[b].ff.layers[0].weight,
+            params["blocks"][b]["mlp"]["c_fc"]["w"].T)
+        gpt.trf_blocks[b].ff.layers[0].bias = assign(
+            gpt.trf_blocks[b].ff.layers[0].bias,
+            params["blocks"][b]["mlp"]["c_fc"]["b"])
+        gpt.trf_blocks[b].ff.layers[2].weight = assign(
+            gpt.trf_blocks[b].ff.layers[2].weight,
+            params["blocks"][b]["mlp"]["c_proj"]["w"].T)
+        gpt.trf_blocks[b].ff.layers[2].bias = assign(
+            gpt.trf_blocks[b].ff.layers[2].bias,
+            params["blocks"][b]["mlp"]["c_proj"]["b"])
+
+        gpt.trf_blocks[b].norm1.scale = assign(
+            gpt.trf_blocks[b].norm1.scale,
+            params["blocks"][b]["ln_1"]["g"])
+        gpt.trf_blocks[b].norm1.shift = assign(
+            gpt.trf_blocks[b].norm1.shift,
+            params["blocks"][b]["ln_1"]["b"])
+        gpt.trf_blocks[b].norm2.scale = assign(
+            gpt.trf_blocks[b].norm2.scale,
+            params["blocks"][b]["ln_2"]["g"])
+        gpt.trf_blocks[b].norm2.shift = assign(
+            gpt.trf_blocks[b].norm2.shift,
+            params["blocks"][b]["ln_2"]["b"])
+
+    gpt.final_norm.scale = assign(gpt.final_norm.scale, params["g"])
+    gpt.final_norm.shift = assign(gpt.final_norm.shift, params["b"])
+    gpt.out_head.weight = assign(gpt.out_head.weight, params["wte"])
+
+
+def train_model_simple(model, optimizer, device, n_epochs,
+                       eval_freq, eval_iter, print_sample_iter, start_context,
+                       output_dir, save_ckpt_freq, tokenizer,
+                       batch_size=1024, train_ratio=0.90):
+
+    train_losses, val_losses, track_tokens_seen = [], [], []
+    tokens_seen = 0
+    global_step = -1
+    start_time = time.time()
+
+    try:
+        for epoch in range(n_epochs):
+
+            # Iterate over the books in the training corpus
+            # RESUMING TRAINING FROM BOOK 7
+            for index, file_path in enumerate(all_files[6:], 1):
                 book_start_time = time.time()
                 text_data = read_text_file(file_path) + " <|endoftext|> "
 
@@ -132,71 +265,6 @@ def train_model_simple(model, optimizer, device, n_epochs,
                         "train/loss_step": loss.item(),
                         "train/tokens_seen": tokens_seen,
                         "train/global_step": global_step,
-                        "train/epoch": epoch
-                    })
-
-                    # Optional evaluation step
-                    if global_step % eval_freq == 0:
-                        train_loss, val_loss = trainer.evaluate_model(
-                            model, train_loader, val_loader, device, eval_iter)
-                        train_losses.append(train_loss)
-                        val_losses.append(val_loss)
-                        track_tokens_seen.append(tokens_seen)
-
-                        # wandb loss log
-                        wandb.log({
-                            "eval/train_loss": train_loss,
-                            "eval/val_loss": val_loss
-                        })
-                        print(f"Ep {epoch+1} (Step {global_step}): "
-                              f"Train loss {train_loss:.3f}, Val loss {val_loss:.3f}")
-
-                    # Generate text passage
-                    if global_step % print_sample_iter == 0:
-                        trainer.generate_and_print_sample(
-                            model, tokenizer, device, start_context
-                        )
-
-                if global_step % save_ckpt_freq:
-                    file_name = output_dir / f"model_pg_{global_step}.pth"
-                    torch.save(model.state_dict(), file_name)
-                    wandb.save(str(file_name))
-                    print(f"Saved {file_name}")
-
-                book_elapsed = time.time() - book_start_time
-                wandb.log({
-                    "timing/book_processing_time": book_elapsed,
-                    "timing/books_completed": index
-                })
-
-                print_eta(start_time, book_start_time, index, total_files)
-
-    except KeyboardInterrupt:
-        file_name = output_dir / f"model_pg_{global_step}_interrupted.pth"
-        torch.save({
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            'global_step': global_step,
-        }, file_name)
-        wandb.save(str(file_name))
-        print(f"Saved {file_name}")
-    
-    finally:
-        wandb.finish()
-
-    return train_losses, val_losses, track_tokens_seen
-
-
-if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser(description="GPT Model Training Configuration")
-
-    parser.add_argument("--data_dir", type=str, default="gutenberg_preprocessed",
-                        help="Directory containing the training data")
-    parser.add_argument("--output_dir", type=str, default="model_checkpoints",
-                        help="Directory where the model checkpoints will be saved")
-    parser.add_argument("--n_epochs", type=int, default=1,
-                        help="Number of epochs to train the model")
     parser.add_argument("--print_sample_iter", type=int, default=1000,
                         help="Iterations between printing sample outputs")
     parser.add_argument("--eval_freq", type=int, default=100,
@@ -239,8 +307,10 @@ if __name__ == "__main__":
     if args.chkpt_path:
         checkpoint = torch.load(args.chkpt_path, map_location=device)
         model.load_state_dict(checkpoint["model_state_dict"])
+        model.to(device)
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-    model.to(device)
+    else:
+        model.to(device)
 
     data_dir = args.data_dir
     all_files = [os.path.join(path, name) for path, subdirs, files

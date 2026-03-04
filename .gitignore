@@ -18,5 +18,14 @@ training/gutenberg_preprocessed/**
 # checkpoints
 training/model_checkpoints/**
 
+# wandb stuff
+training/wandb
+
 # env file
 .env
+
+# ignore all pth files
+*.pth
+
+# ignore gpt2 downloaded stuff
+gpt2/124M
