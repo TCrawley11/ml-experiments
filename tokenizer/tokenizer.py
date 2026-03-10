@@ -2,6 +2,7 @@ import tiktoken
 
 """
     Wrapper class for the openai tiktoken library.
+    For use in training.
 """
 class Tiktokenizer:
     def __init__(self, enc_name: str = "o200k_base"):
