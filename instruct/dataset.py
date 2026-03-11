@@ -61,7 +61,7 @@ def collate_v2(batch, pad_token_id = 50256, device = "cpu"):
     return inputs_tensor, targets_tesnsor
 
 
-# add ignore index to replace padded
+# add ignore tokens to nullify effects of excess padding tokens for cross entropy loss
 def collate_fn(batch, ignore_index = -100, pad_token_id = 50256, allowed_max_length = None, device = "cpu"):
     batch_max_length = max(len(item)+1 for item in batch)
     inputs_list = []
