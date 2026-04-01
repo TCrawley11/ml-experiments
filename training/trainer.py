@@ -4,12 +4,13 @@ from model.architecture import generate_text
 
 class Trainer():
     def __init__(self):
-        pass
+        self.scaler = torch.amp.GradScaler()
 
     def calc_loss_batch(self, input_batch, target_batch, model, device):
         input_batch, target_batch = input_batch.to(device), target_batch.to(device)
-        logits = model(input_batch)
-        loss = torch.nn.functional.cross_entropy(logits.flatten(0, 1), target_batch.flatten())
+        with torch.amp.autocast(device_type="cuda"):
+            logits = model(input_batch)
+            loss = torch.nn.functional.cross_entropy(logits.flatten(0, 1), target_batch.flatten())
         return loss
 
     def calc_loss_loader(self, data_loader, model, device, num_batches=None):
@@ -43,8 +44,9 @@ class Trainer():
             for input_batch, target_batch in train_loader:
                 optimizer.zero_grad() # Reset loss gradients from previous batch iteration
                 loss = self.calc_loss_batch(input_batch, target_batch, model, device)
-                loss.backward() # Calculate loss gradients
-                optimizer.step() # Update model weights using loss gradients
+                self.scaler.scale(loss).backward() # Calculate loss gradients
+                self.scaler.step(optimizer) # Update model weights using loss gradients
+                self.scaler.update()
                 tokens_seen += input_batch.numel()
                 global_step += 1
 

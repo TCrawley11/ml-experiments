@@ -98,6 +98,6 @@ def collate_fn(batch, ignore_index = -100, pad_token_id = 50256, allowed_max_len
 # use functools to create a custom version of the collate fn to use cuda and 1024 context length
 customized_collate_fn = partial(
     collate_fn,
-    device=str(torch.device("cuda" if torch.cuda.is_available() else "cpu")),
+    device="cpu",
     allowed_max_length=1024
     )
