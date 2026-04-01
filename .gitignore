@@ -28,4 +28,4 @@ training/wandb
 *.pth
 
 # ignore gpt2 downloaded stuff
-gpt2/124M
+gpt2/
