@@ -152,8 +152,8 @@ class GPTModelFlashAttn(nn.Module):
         self.pos_emb = nn.Embedding(cfg["context_length"], cfg["emb_dim"])
         self.drop_emb = nn.Dropout(cfg["drop_rate_emb"])
 
-        self.trf_blocks = nn.Sequential(
-            *[TransformerBlock(cfg) for _ in range(cfg["n_layers"])]
+        self.trf_blocks = nn.ModuleList(
+            [TransformerBlock(cfg) for _ in range(cfg["n_layers"])]
         )
         self.final_norm = LayerNorm(cfg["emb_dim"])
         self.out_head = nn.Linear(cfg["emb_dim"], cfg["vocab_size"], bias=False)
@@ -168,9 +168,13 @@ class GPTModelFlashAttn(nn.Module):
         )
         x = tok_embs + pos_embs
         x = self.drop_emb(x)
-        
-        # transformer blocks
-        x = self.trf_blocks(x)
+
+        # transformer blocks with gradient checkpointing
+        for block in self.trf_blocks:
+            if self.training:
+                x = torch.utils.checkpoint.checkpoint(block, x, use_reentrant=False)
+            else:
+                x = block(x)
 
         # final processing
         x = self.final_norm(x)
